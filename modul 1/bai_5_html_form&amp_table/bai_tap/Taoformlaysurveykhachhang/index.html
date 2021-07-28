@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Tao form lay survey khach hang</title>
+    <style>
+    .p1{
+       color: crimson;
+        font-size: 13px;
+    }
+        .header_age{
+            font-size: 15px;
+
+        }
+        #select_age{
+            font-size: 18px;
+            width: 50%;
+        }
+        #age{
+            margin-top: 7px;
+            padding-bottom: 10px;
+            padding-left: 15px;
+        }
+        #age:hover {
+            display: block;
+            background-color: chocolate;
+            color: white;
+        }
+        #sex{
+            padding-left: 15px;
+            padding-top: 5px;
+            padding-bottom: 5px;
+        }
+        #sex:hover{
+            background-color: chocolate;
+            color: white;
+        }
+        .sex_other{
+            display: none;
+        }
+        #product{
+            padding-left: 15px;
+            padding-top: 5px;
+            padding-bottom: 5px;
+        }
+        #product:hover{
+            background-color: chocolate;
+            color: white;
+        }
+        #new_product{
+            padding-left: 15px;
+            padding-top: 5px;
+            padding-bottom: 5px;
+        }
+        #new_product:hover{
+            background-color: chocolate;
+            color: white;
+        }
+        .dolla_text1{
+            width: 60px;
+            size: 40px;
+        }
+        .dolla_text2{
+            width: 20px;
+            size: 40px;
+        }
+        #pay{
+            padding-left: 15px;
+            padding-top: 5px;
+            padding-bottom: 5px;
+        }
+        #pay:hover{
+            background-color: chocolate;
+            color: white;
+        }
+        #features{
+            padding-left: 15px;
+            padding-top: 5px;
+            padding-bottom: 5px;
+        }
+        .features_text{
+            font-family: monospace;
+        }
+        .body_text{
+        }
+        #features:hover{
+            background-color: chocolate;
+            color: white;
+        }
+    </style>
+</head>
+<body>
+<h2>Market Reshearch Survey</h2>
+<p class="p1" >Please take a few moments to complete this satisfaction survey</p>
+<hr>
+<div id="age">
+    <pre class="header_age">What is your age range?</pre>
+    <select name="select_age" id="select_age">
+        <option value="">18 - 24</option>
+        <option value="">25 - 34</option>
+        <option value="">35 - 50</option>
+        <option value="">50+</option>
+    </select>
+</div>
+<div id="age">
+    <pre class= "header_age">What is your yearly income range?</pre>
+    <select name="select_age" id="select_age">
+        <option value="">$0 - $25,000</option>
+        <option value="">$25,001 - $50,000</option>
+        <option value="">$50,001 - $100,000</option>
+        <option value="">100,000+</option>
+    </select>
+</div>
+<div id="sex">
+    <pre class="header_sex">Gender Identity</pre>
+    <input type="radio" name="sex">Male <br>
+    <input type="radio" name="sex">Female <br>
+    <input type="radio" name="sex">Nonbinary <br>
+    <input class="Other_header_sex" type="radio" name="sex">Other <br>
+    <input type="text"n name="sex"><br>
+    <pre class="sex_other">Maximum of 250 characters.    Currently Used: 0 characters.</pre>
+</div>
+<div id="product" >
+    <pre>Which of the following products have your purchased in the last 2 months. Please check all that apply.</pre>
+    <input type="checkbox" name="product"> Product 1 <br>
+    <input type="checkbox" name="product"> Product 2 <br>
+    <input type="checkbox" name="product"> Product 3 <br>
+
+</div>
+<div id="new_product">
+    <pre>How often would you use our new product?</pre>
+    <input type="radio" name="new_product"> Daily <br>
+    <input type="radio" name="new_product"> Weekly <br>
+    <input type="radio" name="new_product"> Monthly <br>
+</div>
+<div id="pay">
+<pre>What would you pay for the new product?</pre>
+    <p class="pay_dolla"> $
+        <input class="dolla_text1" type="text" name="dolla">
+        .
+        <input class="dolla_text2" type="text" name="dolla">
+     </p>
+</div>
+<div id="features">
+    <p class="features_text">What features would to like to see in the new product</p> <br>
+    <textarea name="body_text" class="body_text" cols="100" rows="15"></textarea>
+</div>
+</body>
+</html>
