@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Form dang ky nguoi dung</title>
+    <style>
+        #form{
+            font-family: .VnArabia;
+            font-weight: 700;
+        }
+        p{
+            padding-top: 5px;
+            padding-bottom: 5px;
+            padding-left: 20px;
+        }
+        #vien{
+            width: 300px;
+        }
+    </style>
+</head>
+<body>
+<form id="form" action="https://demo.codegym.vn/6/registration_form/register.php" method="post">
+    <fieldset id="vien">
+    <p>Họ và tên: <br>
+    <input type="text" name="name">
+    </p>
+    <p>Email:<br>
+    <input type="text" name="Email">
+    </p>
+    <p>Số điện thoại: <br>
+    <input type="text" name="phone">
+    </p>
+   <p> Giới tính<br>
+    <input type="radio" name="gender">Nam
+    <input type="radio" name="gender">Nữ
+   </p>
+   <p><input type="submit" name="submit" value="Đăng ký"></p>
+    </fieldset>
+</form>
+</body>
+</html>
