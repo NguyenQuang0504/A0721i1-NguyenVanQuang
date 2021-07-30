@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Nhung javascript</title>
+</head>
+<body>
+<!--bai tap 1-->
+<button type="button" name="button" onclick="alert('Xin Chào!')">Click me!</button>
+<br>
+<br>
+<!--bai tapo 2-->
+<div id="mes">Đừng click me</div>
+<button type="button" name="button" onclick="showMessage()">Click me!</button>
+<script>
+    function showMessage() {
+    document.getElementById('mes').innerHTML='Xin Chào!';
+    }
+</script>
+<br>
+<br>
+<!--bai 3 dung file js-->
+<div id="mess">Đừng click me!</div>
+<button type="button" name="button" onclick="showMessage1()">click me</button>
+<script src="bai3.js"></script>
+</body>
+</html>
