@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Ung dung chuyen doi tien te</title>
+    <style>
+        #fcurrency{
+         padding: 0 30px;
+        }
+        #tcurrency{
+           padding: 0 30px;
+          }
+    </style>
+</head>
+<body>
+<form action="main.js" method="get">
+    <lable>
+        <p>Amount</p>
+    <input type="text" value="" placeholder="Amount" id="Amount" >
+    </lable>
+    <lable>
+        <p>From Currency</p>
+        <select name="From_Currency" id="fcurrency">
+            <option value="1">VND</option>
+        </select>
+    </lable>
+    <lable>
+        <p>To Currency</p>
+        <select name="To_Currency" id="tcurrency">
+            <option value="1">VND</option>
+            <option value="23000">USD</option>
+            <option value="27000">Euro</option>
+            <option value="7000">Nhan dan te</option>
+
+        </select>
+    </lable>
+    <input type="button" value="Result" onclick="send()">
+</form>
+<div id="kq"></div>
+<script src="main.js"></script>
+</body>
+</html>
