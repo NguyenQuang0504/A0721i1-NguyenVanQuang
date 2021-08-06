@@ -1,0 +1,36 @@
+<!--Yêu cầu người dùng nhập tên từ bàn phím.-->
+
+<!--Nếu tên nhập vào là Admin thì yêu cầu nhập mật khẩu.-->
+<!--Nếu mật khẩu là TheMaster thì in ra chuỗi Welcome.-->
+<!--Nếu mật khẩu nhập vào là null in ra chuỗi Canceled.-->
+<!--Còn lại in ra chuỗi Wrong password.-->
+<!--Nếu tên nhập vào là null in ra chuỗi canceld.-->
+<!--Còn lại in ra chuỗi “I don’t know you"-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Luyen tap cau truc if else if</title>
+</head>
+<style>
+</style>
+<body>
+<center>
+    <form action="" id="user">
+        <lable id="username" >
+            Ban hay nhap Username:
+            <input type="text" id="userName">
+            <button type="button" onclick="send_user_name()">Next</button>
+        </lable>
+        <br>
+        <br>
+        <lable id="pass" style="display: none">
+            Ban hay nhap password:
+             <input type="text" value="" id="password">
+            <button type="button" onclick="send_p()">Result!</button>
+        </lable>
+    </form>
+</center>
+<script src="main.js"></script>
+</body>
+</html>
