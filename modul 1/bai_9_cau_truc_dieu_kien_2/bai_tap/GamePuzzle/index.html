@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>game puzzle</title>
+    <style>
+        h1{
+            background-color: orange;
+            text-align: center;
+        }
+        #result{
+            text-align: center;
+            color: #d61b06;
+        }
+    </style>
+</head>
+<body>
+<h1>GAME BUZZLE</h1>
+<center>
+    <table>
+        <tr>
+            <td>
+                <button type="button" id="btn_img1.1" onclick="img1()"><img src="img/img1.1.jpg" alt="img1.1" id="img1" style="height: 200px; width: 200px"></button>
+                <button type="button" id="btn_img1.2" onclick="img2()"><img src="img/img1.2.jpg" alt="img1.2" id="img2" style="height: 200px; width: 200px"></button>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <button type="button" id="btn_img1.3" onclick="img3()"><img src="img/img1.3.jpg" alt="img1.3" id="img3" style="height: 200px; width: 200px"></button>
+                <button type="button" id="btn_img1.4" onclick="img4()"><img src="img/img1.4.jpg" alt="img1.4" id="img4" style="height: 200px; width: 200px"></button>
+            </td>
+        </tr>
+        <br>
+        <button type="button" name="btn" onclick="result1()">Kiem tra ket qua!</button>
+    </table>
+</center>
+<div><h2 id="result"></h2></div>
+<script src="main.js"></script>
+</body>
+</html>
