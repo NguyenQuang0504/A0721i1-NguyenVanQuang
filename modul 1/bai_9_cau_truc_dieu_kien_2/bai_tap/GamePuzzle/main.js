@@ -1,7 +1,7 @@
 let a = 0;
 let b = 0;
 let c = 0;
-let d=0;
+let d = 0;
 function img1() {
     a=a+1;
     if (a===1) {
@@ -70,4 +70,5 @@ function result1() {
         document.getElementById('result').innerText = 'Rat tiec, ban hay thu lai!';
     }
 }
+
 

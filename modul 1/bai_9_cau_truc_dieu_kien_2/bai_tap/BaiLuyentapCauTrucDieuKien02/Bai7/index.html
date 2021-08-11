@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Bai 7</title>
+</head>
+<body>
+<script>
+    let a= parseFloat(prompt('Ban hay nhap a'));
+    let b= parseFloat(prompt('Ban hay nhap b'));
+    let c= parseFloat(prompt('Ban hay nhap c'));
+    let x1;
+    let x2;
+    let delta = b*b - 4*a*c;
+    if(delta<0){
+    alert('PTVN');
+    }
+    else if(delta===0){
+    x1 = x2 = -b/(2*a);
+    alert('Ngiem la:'+x1);
+    }
+    else{
+    delta = Math.sqrt(delta);
+    x1 = (-b + delta) / (2*a);
+    x2 = (-b - delta) / (2*a);
+    alert('Phuong trinh co hai nghiem la:'+x1 +' va ' +x2);
+    }
+</script>
+</body>
+</html>

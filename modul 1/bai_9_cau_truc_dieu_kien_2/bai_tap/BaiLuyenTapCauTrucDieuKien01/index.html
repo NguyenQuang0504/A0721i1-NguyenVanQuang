@@ -1,0 +1,79 @@
+<!--Bài 1: Nhập vào hai số a và b, và kiểm tra xem a có chia hết cho b hay không-->
+<!--Bài 2: Nhập tuổi và in ra kết quả nếu tuổi học sinh đó không đủ điều kiện vào học lớp 10.-->
+<!--Bài 3: Nhập một số nguyên bất kỳ và in kết quả ra màn hình để nói cho người dùng biết số đó là lớn hay nhỏ hơn 0-->
+<!--Bài 4: Nhập 3 số nguyên và tìm giá trị lớn nhất của ba số nguyên đó-->
+<!--Bài 5: Xếp hạng học lực của học sinh dựa trên các điểm bài kiểm tra, điểm thi giữa kỳ, điểm thi cuối kỳ-->
+<!--Bài 6: Tính hoa hồng nhận được tuỳ theo mức doanh số bán hàng-->
+<!--Bài 7: Tính cước điện thoại cho một hộ gia đình với các thông số đã cho-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Luyen tap 1</title>
+    <style>
+        h1{
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+<h1>Bài luyện tập 1</h1>
+<div>
+    <h2>Bài 1: Nhập vào hai số a và b, và kiểm tra xem a có chia hết cho b hay không</h2>
+    <p>Nhap a:</p>
+    <input type="text" name="inputA" id="inputA">
+    <br>
+    <p>Nhap b:</p>
+    <input type="text" name="inputB" id="inputB">
+    <button type="button" name="btn" onclick="resultB1()">Result!</button>
+</div>
+<div>
+    <h2>Bài 2: Nhập tuổi và in ra kết quả nếu tuổi học sinh đó không đủ điều kiện vào học lớp 10</h2>
+    <p>Nhap tuoi:</p>
+    <input type="text" name="input_age" id="input_age">
+    <br>
+    <br>
+    <button type="button" name="btn" onclick="ResultB2()">Result!</button>
+</div>
+<div>
+    <h2>Bài 3: Nhập một số nguyên bất kỳ và in kết quả ra màn hình để nói cho người dùng biết số đó là lớn hay nhỏ hơn 0</h2>
+    <p>Nhap so can kiem tra:</p>
+    <input type="text" name="inputNumber" id="inputNumber">
+    <br>
+    <br>
+    <button type="button" name="btn" onclick="ResultB3()">Result!</button>
+</div>
+<div>
+    <h2>Bài 4: Nhập 3 số nguyên và tìm giá trị lớn nhất của ba số nguyên đó</h2>
+    <p>Nhap a:</p>
+    <input type="text" name="inputfirst" id="numberFirst">
+    <p>Nhap b:</p>
+    <input type="text" name="inputsecond" id="numberSecond">
+    <p>Nhap c:</p>
+    <input type="text" name="inputthirt" id="numberThirt">
+    <br>
+    <br>
+    <button type="button" name="btn" id="ResultB4" onclick="ResultB4()">Result!</button>
+</div>
+<div>
+    <h2>Bài 5: Xếp hạng học lực của học sinh dựa trên các điểm bài kiểm tra, điểm thi giữa kỳ, điểm thi cuối kỳ</h2>
+    <p>Nhap diem chuyen can:</p>
+    <input type="text" name="input" id="number1">
+    <p>Nhap diem thi giua ky:</p>
+    <input type="text" name="input" id="number2">
+    <p>Nhap diem thi cuoi ky:</p>
+    <input type="text" name="input" id="number3">
+    <br>
+    <br>
+    <button type="button" name="btn" id="ResultB5" onclick="ResultB5()">Result!</button>
+</div>
+<div>
+    <h2>Bài 6: Tính hoa hồng nhận được tuỳ theo mức doanh số bán hàng</h2>
+    <p>Ban hay nhap doanh so thang nay:</p>
+    <input type="text" name="value" id="monney">
+    <br>
+    <button type="button" name="btn" onclick="ResultB6()">Result!</button>
+</div>
+</body>
+<script src="main.js"></script>
+</html>
