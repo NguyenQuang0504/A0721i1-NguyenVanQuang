@@ -16,6 +16,7 @@ function img1() {
     if(a>=3){
         a=0;
     }
+    setTimeout(result1,200);
 }
 function img2() {
     b=b+1;
@@ -31,6 +32,7 @@ function img2() {
     if(b>=3){
         b=0;
     }
+    setTimeout(result1,200);
 }
 function img3() {
     c=c+1;
@@ -46,6 +48,7 @@ function img3() {
     if(c>=3){
         c=0;
     }
+    setTimeout(result1,200);
 }
 function img4() {
     d=d+1;
@@ -61,6 +64,7 @@ function img4() {
     if(d>=3){
         d=0;
     }
+    setTimeout(result1,200);
 }
 function result1() {
     if(a===b&&b===c&&c===d){
