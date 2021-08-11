@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Bai 12</title>
+</head>
+<body>
+<!--Bài 12: Viết chương trình tính lãi ngân hàng (lãi mẹ đẻ lãi con) khi biết số tiền ban đầu, số tháng cho vay và lãi xuất hàng tháng.-->
+<script>
+    let FV;
+    let PV = parseFloat(prompt("Ban hay nhap so tien ban dau"));
+    let i =  parseFloat(prompt("Ban hay nhap lai xuat hang thang"));
+    let n =  parseFloat(prompt("Ban hay nhap so thang gui tien"));
+    FV = PV*Math.pow((1+i),n);
+    alert("So tien sau " +n +" thang gui vao ngan hang voi lai xuat " +i +" la " +FV +"VND");
+</script>
+</body>
+</html>

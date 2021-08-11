@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Bai 10</title>
+</head>
+<body>
+<!--Bài 11: Viết chương trình tính thuế thu nhập cá nhân.-->
+<script>
+    let monney=null;
+    let a = parseInt(prompt("Ban hay nhap thu nhap hang nam"));
+    if(a>1000000000){
+        monney=a*(10/100);
+    }
+    else if(a>500000000){
+        monney=a*(5/100);
+    }
+    else if(a>100000000){
+        monney=a*(2/100);
+    }
+    else if(a>50000000){
+        monney=a*(1/100);
+    }
+    else{
+        monney=0;
+    }
+    alert("So tien thue ban phai nop la:" +monney);
+</script>
+</body>
+</html>

@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Bai 9</title>
+</head>
+<body>
+<!--Bài 9: Kiểm tra xem 3 số thực (a,b,c) nhập vào có phải là cạnh của một tam giác. Điều kiện để a,b,c là cạnh của một tam giác là:-->
+<script>
+    let a=parseFloat(prompt("ban hay nhap canh a:"));
+    let b=parseFloat(prompt("ban hay nhap canh b:"));
+    let c=parseFloat(prompt("ban hay nhap canh c:"));
+    if(a>0 && b>0 && c>0 && a+b>c && a+c>b && b+c>a){
+        alert('Ba canh ban vua nhap la ba canh cua mot tam giac');
+    }
+    else{
+        alert("Ba canh ban vua nhap khong phai cua mot tam giac");
+    }
+</script>
+</body>
+</html>
