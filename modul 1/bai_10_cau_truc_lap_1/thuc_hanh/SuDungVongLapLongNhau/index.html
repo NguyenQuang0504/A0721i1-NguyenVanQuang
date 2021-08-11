@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Su Dung Vong Lap Long Nhau</title>
+    <style>
+        h1{
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+<h1> Bai Su Dung Vong Lap Long Nhau</h1>
+<script>
+    let i = null;
+    let j=null;
+    let table = "<table border='1' style='background-color: orange'>"
+    for(i=1;i<=10;i++){
+        table = table + "<tr>";
+        for (j=1;j<=10;j++){
+            table = table +"<td height='50px' width='50px'>" + "<p style='text-align: center'>" + j*i + "</p>" + "</td>";
+        }
+        table = table +"</tr>";
+    }
+    table = table + "</table>";
+    document.write(table);
+</script>
+</body>
+</html>

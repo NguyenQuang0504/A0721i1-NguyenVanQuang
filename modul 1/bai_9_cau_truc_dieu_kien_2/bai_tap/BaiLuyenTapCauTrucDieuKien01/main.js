@@ -1,3 +1,4 @@
+// Bai1
 function resultB1() {
     let a = document.getElementById('inputA').value;
     let b = document.getElementById('inputB').value;
@@ -8,6 +9,7 @@ function resultB1() {
         alert('a khong chia het cho b');
     }
 }
+// Bai2
 function ResultB2() {
     let age = document.getElementById('input_age').value;
     if(age>=16){
@@ -17,6 +19,7 @@ function ResultB2() {
         alert('Ban chua du tuoi vao lop 10');
     }
 }
+// Bai3
 function ResultB3() {
     let number = document.getElementById('inputNumber').value;
     if(number>0){
@@ -29,6 +32,7 @@ function ResultB3() {
         alert('So ban vua nhap nho hon khong');
     }
 }
+// Bai4
 function ResultB4() {
     let c = parseFloat(document.getElementById('numberFirst').value);
     let d = parseFloat(document.getElementById('numberSecond').value);
@@ -51,6 +55,7 @@ function ResultB4() {
         }
     }
 }
+// Bai5
 function ResultB5() {
     let cc = parseFloat(document.getElementById('number1').value);
     let gk = parseFloat(document.getElementById('number2').value);
@@ -73,6 +78,7 @@ function ResultB5() {
     }
 
 }
+// Bai6
 function ResultB6() {
     let monney = parseInt(document.getElementById('monney').value);
     let value;
@@ -91,4 +97,10 @@ function ResultB6() {
     else{
         alert('Thang nay ban khong nhan duoc tien lai');
     }
+}
+// Bai7
+function resultB7() {
+let time = document.getElementById('inputtime').value;
+let monney = time*100;
+alert('So tien cuoc la: ' +monney +"VND");
 }
