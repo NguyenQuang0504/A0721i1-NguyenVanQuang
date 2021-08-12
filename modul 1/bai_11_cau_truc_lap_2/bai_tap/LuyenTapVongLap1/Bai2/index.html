@@ -1,0 +1,22 @@
+<!--Sử dụng hàm prompt() để lấy thông tin nhiệt độ hiện tại được nhập bởi người truy cập.-->
+<!--Nếu nhiệt độ nhập vào trên 100, yêu cầu người dùng giảm nhiệt độ. -->
+<!--Nếu nhiệt độ dưới 20, yêu cầu người dùng tăng nhiệt độ.-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Bai 2</title>
+</head>
+<body>
+<script>
+    let a = parseInt(prompt('Ban hay nhap nhiet do hien tai'));
+    while (a>100){
+        a = parseInt(prompt('Ban hay giam nhiet do hien tai'));
+    }
+    while(a<20){
+        a = parseInt(prompt('Ban hay tang nhiet do hien tai'));
+    }
+    alert('Nhiet do hien tai la ' +a);
+</script>
+</body>
+</html>

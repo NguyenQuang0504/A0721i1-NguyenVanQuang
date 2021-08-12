@@ -1,0 +1,31 @@
+<!--Bài 5: Tính tổng của 20 số đầu tiên trong dãy fibonacci.-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Bai 5</title>
+</head>
+<body>
+<script>
+    let i;
+    let a = 1;
+    let b = 1;
+    let c;
+    let s=2;
+    document.write(a +"<br>");
+    document.write(b +"<br>");
+    for(i=1;i<=6;i++){
+        c = a+b;
+        s=s+c;
+        document.write(c +"<br>");
+        a=b+c;
+        s=s+a;
+        document.write(a +"<br>");
+        b=c+a;
+        s=s+b;
+        document.write(b +"<br>");
+    }
+    document.write("Tong 20 so dau tien la " +s);
+</script>
+</body>
+</html>

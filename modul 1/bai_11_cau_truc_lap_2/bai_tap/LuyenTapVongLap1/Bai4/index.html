@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Bai 4</title>
+</head>
+<body>
+<script>
+    let a =1;
+    let b =1;
+    let c=0;
+    while(a%5!=0 && b%5!=0 && (c%5!=0 || c == 0)){
+        c=a+b;
+        a=b+c;
+        b=c+a;
+    }
+    if(a%5==0){
+        alert(a);
+    }
+    if(b%5==0){
+        alert(b);
+    }
+    if(c%5==0){
+        alert(c);
+    }
+</script>
+</body>
+</html>
