@@ -1,0 +1,36 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Bai 1</title>
+    <style>
+        h1{
+            text-align: center;
+        }
+        h2{
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+<h1>Bài 1: Sử dụng vòng lặp để đếm từ 1 đến 100. Khi số là 99, hiển thị hộp thoại thông báo là đã hoàn thành.</h1>
+<h2 id="display"></h2>
+ <script>
+     let i = 1;
+     function myLoop() {
+         setTimeout(function() {
+             document.getElementById('display').innerText = i;
+             i++;
+             if(i>99){
+                 setTimeout(alert('ket thuc chuong trinh'),1000);
+             }
+             if (i < 100) {
+                 myLoop();
+             }
+         }, 100);
+     }
+     myLoop();
+ </script>
+</body>
+</html>
