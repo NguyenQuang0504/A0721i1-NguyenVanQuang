@@ -1,0 +1,27 @@
+<!--Bài 1: In dãy Finonaci-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Bai 1</title>
+</head>
+<body>
+<script>
+    let number = parseInt(prompt("Nhap so cac so finonaci"));
+    let i;
+    let a = 1;
+    let b = 1;
+    let c;
+    document.write(a +"<br>");
+    document.write(b +"<br>");
+    for(i=1;i<=((number-2)/3);i++){
+        c = a+b;
+        document.write(c +"<br>");
+        a=b+c;
+        document.write(a +"<br>");
+        b=c+a;
+        document.write(b +"<br>");
+    }
+</script>
+</body>
+</html>
