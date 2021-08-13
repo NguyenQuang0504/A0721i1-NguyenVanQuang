@@ -1,0 +1,21 @@
+<!--Bài 5: Viết chương trình tính lãi ngân hàng (lãi mẹ đẻ lại con) khi biết số tiền ban đầu, số tháng cho vay và lãi xuất hàng tháng.-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Bai 5</title>
+</head>
+<body>
+<script>
+    let monney = parseInt(prompt("Ban hay nhap so tien ban dau la: "));
+    let latxuat = (5/100);
+    let month = parseInt(prompt("Ban hay nhap so thang : "));
+    let resultmonney = monney;
+    let count;
+    for(count =1;count<=month;count++){
+        resultmonney= resultmonney+resultmonney*latxuat;
+        document.write("tien thang " +i +"la " +resultmonney);
+    }
+</script>
+</body>
+</html>

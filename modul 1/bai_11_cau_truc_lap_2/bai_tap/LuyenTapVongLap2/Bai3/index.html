@@ -1,0 +1,55 @@
+<!--Bài 3: In tam giác vuông. Các góc vuông nằm ở các vị trí khác nhau-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Bai 3</title>
+</head>
+<body>
+<script>
+    let n=1;
+    let i;
+    let k;
+    function for1() {
+        for(i=1;i<=n;i++){
+            document.write("*");
+        }
+    }
+    function for2() {
+        for(k=1;k<=5-n;k++){
+            document.write("&nbsp;&nbsp;");
+        }
+    }
+    while(n<=5){
+        for1();
+        for2();
+        n=n+1;
+        document.write("<br>");
+    }
+    document.write("<br>");
+    n=1;
+    while(n<=5){
+        for2();
+        for1();
+        n=n+1;
+        document.write("<br>");
+    }
+    document.write("<br>");
+    n=5;
+    while(n>=1){
+        for1();
+        for2();
+        n=n-1;
+        document.write("<br>");
+    }
+    document.write("<br>");
+    n=5
+    while(n>=1){
+        for2();
+        for1();
+        n=n-1;
+        document.write("<br>");
+    }
+</script>
+</body>
+</html>
