@@ -1,0 +1,26 @@
+<!--Bài 6: Tính tổng của 30 số chia hết cho 7 đầu tiên trong các số tự nhiên.-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>bai 6</title>
+</head>
+<body>
+<h2>Tong cua 30 so tu nhien chia het cho 7 dau tien</h2>
+<script>
+    let a=1;
+    let i=1;
+    let s=0;
+    while(a<=30){
+        while(i%7!=0){
+            i=i+1;
+        }
+        document.write("So chia het cho 7 thu " +a +"la" +i +"<br>");
+        s=s+i;
+        a++;
+        i=i+1;
+    }
+    document.write('Tong cua 30 so dau tien chia het cho 7 la ' +s);
+</script>
+</body>
+</html>
