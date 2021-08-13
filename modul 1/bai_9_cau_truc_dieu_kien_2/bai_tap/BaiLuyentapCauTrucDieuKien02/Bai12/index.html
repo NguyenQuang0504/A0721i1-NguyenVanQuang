@@ -7,12 +7,15 @@
 <body>
 <!--Bài 12: Viết chương trình tính lãi ngân hàng (lãi mẹ đẻ lãi con) khi biết số tiền ban đầu, số tháng cho vay và lãi xuất hàng tháng.-->
 <script>
-    let FV;
-    let PV = parseFloat(prompt("Ban hay nhap so tien ban dau"));
-    let i =  parseFloat(prompt("Ban hay nhap lai xuat hang thang"));
-    let n =  parseFloat(prompt("Ban hay nhap so thang gui tien"));
-    FV = PV*Math.pow((1+i),n);
-    alert("So tien sau " +n +" thang gui vao ngan hang voi lai xuat " +i +" la " +FV +"VND");
+    let monney = parseInt(prompt("Ban hay nhap so tien ban dau la: "));
+    let latxuat = (5/100);
+    let month = parseInt(prompt("Ban hay nhap so thang : "));
+    let resultmonney = monney;
+    let count;
+    for(count =1;count<=month;count++){
+        resultmonney= resultmonney+resultmonney*latxuat;
+    }
+    alert("So tien nhan duoc la " +resultmonney);
 </script>
 </body>
 </html>
