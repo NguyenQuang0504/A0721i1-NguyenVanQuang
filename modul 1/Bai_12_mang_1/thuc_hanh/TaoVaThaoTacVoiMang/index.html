@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Tao Va Thao Tac Voi Mang</title>
+    <style>
+        h1{
+            text-align: center;
+            background-color: orange;
+        }
+    </style>
+</head>
+<body>
+<h1>Tao va thao tac voi mang</h1>
+<input type="text" name="input" id="input_value">
+<input type="button" id="btn1" onclick="add_array()" value="Add">
+<input type="button" id="btn2" onclick="display_array()" value="Display">
+<br>
+<script>
+    let x=0;
+    let car = Array();
+    function add_array() {
+         car[x] = document.getElementById('input_value').value;
+         x++;
+        document.getElementById('input_value').value = " ";
+    }
+    function display_array() {
+        alert(car[0]);
+        let count;
+        let text = " ";
+        for(count=0;count<car.length;count++) {
+            text = text + car[count] +"<br>";
+        }
+        document.write(text);
+    }
+</script>
+</body>
+</html>

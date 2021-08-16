@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Dao nguoc cac phan tu trong mang</title>
+    <style>
+        h1{
+            text-align: center;
+            background-color: orange;
+        }
+    </style>
+</head>
+<body>
+<h1>Dao nguoc cac phan tu trong mang</h1>
+<script>
+    let number = " ";
+    let count;
+    let number_array = [-3, 5, 1, 3, 2, 10, 200];
+    number_array.reverse();
+    for( count = 0;count<number_array.length; count++){
+        number = number + number_array[count] +"&nbsp";
+    }
+    document.write(number);
+</script>
+</body>
+</html>
