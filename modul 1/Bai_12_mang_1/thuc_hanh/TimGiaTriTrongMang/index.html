@@ -1,0 +1,29 @@
+<!--Viết một chương trình JavaScript để tìm một giá tri được nhập vào từ hộp thoại có nằm trong mảng hay không.-->
+<!--Nếu có in ra vị trí của phần tử đó.-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Tim gia tri trong mang</title>
+    <style>
+        h1{
+            text-align: center;
+            background-color: orange;
+        }
+    </style>
+</head>
+<body>
+<h1>Tim gia tri trong mang</h1>
+<p id="result"></p>
+<script>
+    let count;
+    let cars = ["mescedes","suzuki","BMW","Mazda","Honda"];
+    let input_cars = prompt("Ban hay nhap hang xe muon kiem tra");
+    for(count = 0; count<cars.length;count++){
+        if(input_cars===cars[count]){
+            document.getElementById('result').innerHTML = "Phan tu xe " +input_cars +" trung voi phan tu thu " +count +"cua mang";
+        }
+    }
+</script>
+</body>
+</html>

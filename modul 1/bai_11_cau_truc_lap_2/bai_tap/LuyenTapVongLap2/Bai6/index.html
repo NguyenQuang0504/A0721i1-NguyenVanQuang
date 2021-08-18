@@ -8,25 +8,32 @@
 <body>
 <h1>In Hinh Trai Tim</h1>
 <script>
-    let a, b, size = 15;
+    let a, b;
+    let  size = 15;
     for (a = size/2; a <= size; a = a+2) {
         for (b = 1; b < size - a; b = b + 2){
-            document.write("&nbsp;&nbsp;");}
+            document.write("&nbsp;&nbsp;");
+        }
         for (b = 1; b <= a; b++){
-            document.write("&nbsp;&nbsp;");}
+            document.write("*");
+        }
+
         for (b = 1; b <= size - a; b++){
-            document.write("&nbsp;&nbsp;");}
-        for (b = 1; b <= a - 1; b++){
-            document.write("A");
-    }
+            document.write("&nbsp;&nbsp;");
+        }
+        for (b = 1; b <= a; b++){
+            document.write("*");
+        }
         document.write("<br>");
     }
     for (a = size; a >= 0; a--)
     {
-        for (b = a; b < size; b++)
+        for (b = a; b <= size; b++){
             document.write("&nbsp;&nbsp;");
-        for (b = 1; b <= ((a * 2) - 1); b++){
-            document.write("B");}
+        }
+        for (b = 1; b <= ((a * 2) - 3); b++){
+            document.write("*");
+        }
         document.write("<br>");
     }
 </script>
