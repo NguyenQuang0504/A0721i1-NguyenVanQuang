@@ -9,7 +9,23 @@
 <body>
 <h1>Nhap mot so va chen dau - vao giua hai so chan</h1>
 <script>
-  
+    const num=window.prompt();
+    const str = num.toString();
+    // Hàm .toString giúp chuyển chuỗi kt thành mãng gồm các ký tự của chuổi
+    const result = [str[0]];
+    for(let x=1; x<str.length; x++)
+    {
+        if((str[x-1]%2 === 0)&&(str[x]%2 === 0))
+        {
+            result.push('-', str[x]);
+        }
+        else
+        {
+            result.push(str[x]);
+        }
+    }
+    document.write(result.join(''));
+    // Hamf join(" ") nối các pt của chuỗi lại
 </script>
 </body>
 </html>

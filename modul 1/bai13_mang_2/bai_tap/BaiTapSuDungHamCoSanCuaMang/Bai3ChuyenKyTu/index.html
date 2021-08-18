@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Bai 3</title>
+</head>
+<body>
+<script>
+    let char = prompt("Bạn hãy nhập chuỗi cần đổi");
+    let char_array = char.toString();
+    let array_out = [];
+    for( let i=0;i<char_array.length;i++) {
+        document.write(char_array[i] + "&nbsp;" + "<br>");
+        if (char_array[i] == char_array[i].toUpperCase()) {
+            array_out[i]=(char_array[i].toLowerCase());
+        } else {
+            array_out[i]=(char_array[i].toUpperCase());
+        }
+    }
+    document.write("<br> Sau khi chuyen chuoi la ");
+    document.write(array_out.join(" "));
+</script>
+</body>
+</html>
