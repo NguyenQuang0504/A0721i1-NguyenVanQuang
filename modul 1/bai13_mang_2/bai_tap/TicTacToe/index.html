@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Tic Tac Toe</title>
+    <style>
+        h1{
+            text-align: center;
+            background-color: orange;
+        }
+    </style>
+</head>
+<body>
+<h1>Tic Tac Toe</h1>
+<input type="button" id="btn" name="btn" onclick="print_matrix()" value="PrintMatrix">
+<input type="button" id="btn1" name="btn" onclick="change_matrix()" value="ChangeMatrix">
+<p id="matrix"></p>
+<script>
+    let text;
+    let count_height;
+    let count_width;
+    let matrix=[];
+function print_matrix() {
+for(count_height=0;count_height<3;count_height++){
+    for(count_width=0;count_width<3;count_width++){
+      matrix[count_height][count_width]=0;
+    }
+}
+}
+function change_matrix(){
+    alert(matrix[2][1]);
+}
+document
+</script>
+</body>
+</html>
