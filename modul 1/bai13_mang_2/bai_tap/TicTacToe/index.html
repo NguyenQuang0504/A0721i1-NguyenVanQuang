@@ -1,3 +1,6 @@
+<!--Xây dựng game caro đơn giản sử dụng phần thực hành về tạo bàn cờ caro. Bàn cờ thay vì số 0 hiển thị mặc định bằng dấu (.).-->
+<!--Có 2 người chơi lần lượt nhập vào là X và O. Mỗi lần giá trị được nhập vào thì bàn cờ thay đổi giá trị theo người chơi.-->
+<!--Xác định người chiến thằng nhập giá trị có 3 ô liên tiếp giống nhau.-->
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -8,29 +11,104 @@
             text-align: center;
             background-color: orange;
         }
+        td{
+            text-align: center;
+            width: 50px;
+            height: 50px;
+        }
     </style>
 </head>
 <body>
 <h1>Tic Tac Toe</h1>
-<input type="button" id="btn" name="btn" onclick="print_matrix()" value="PrintMatrix">
-<input type="button" id="btn1" name="btn" onclick="change_matrix()" value="ChangeMatrix">
+<center>
+<input type="button" id="btn1" name="btn" onclick="change_matrix()" value="Player1">
+<input type="button" id="btn2" name="btn" onclick="change_matrix1()" value="Player2">
 <p id="matrix"></p>
+</center>
 <script>
-    let text;
+    let x;
+    let y;
+    let x1;
+    let y1;
+    let text=" ";
     let count_height;
     let count_width;
     let matrix=[];
-function print_matrix() {
-for(count_height=0;count_height<3;count_height++){
-    for(count_width=0;count_width<3;count_width++){
-      matrix[count_height][count_width]=0;
+    text = text +"<center><table border='1px' >"
+    for(count_height=0;count_height<3;count_height++){
+        matrix[count_height]=[".",".","."];
     }
+    for(count_height=0;count_height<3;count_height++){
+        text = text + "<br>"+"<tr>";
+        for(count_width=0;count_width<3;count_width++){
+            text = text +"<td>"  +matrix[count_height][count_width] +"&nbsp;&nbsp;" +"</td>";
+        }
+        text = text +"</tr>";
+    }
+    text = text +"</table></center>";
+    document.getElementById("matrix").innerHTML = text;
+function change_matrix() {
+    let text=" ";
+    text = text +"<table border='1px' >"
+    do {
+        x = parseInt(prompt("Ban hay nhap toa do x"));
+        y = parseInt(prompt("Ban hay nhap toa do y"));
+    }
+    while (matrix[x][y]=="X")
+    matrix[x][y]="O"
+    for(count_height=0;count_height<3;count_height++){
+        text = text + "<br>"+"<tr>";
+        for(count_width=0;count_width<3;count_width++){
+            text = text +"<td>"  +matrix[count_height][count_width] +"&nbsp;&nbsp;" +"</td>";
+        }
+        text = text +"</tr>";
+    }
+    text = text +"</table>";
+    document.getElementById("matrix").innerHTML = text;
+    check();
 }
-}
-function change_matrix(){
-    alert(matrix[2][1]);
-}
-document
+    function change_matrix1() {
+        let text = " ";
+        text = text + "<table border='1px' >"
+        do {
+            x1 = parseInt(prompt("Ban hay nhap toa do x"));
+            y1 = parseInt(prompt("Ban hay nhap toa do y"));
+        }
+        while(matrix[x1][y1]=="O")
+            matrix[x1][y1] = "X";
+            for (count_height = 0; count_height < 3; count_height++) {
+                text = text + "<br>" + "<tr>";
+                for (count_width = 0; count_width < 3; count_width++) {
+                    text = text + "<td>" + matrix[count_height][count_width] + "&nbsp;&nbsp;" + "</td>";
+                }
+                text = text + "</tr>";
+            }
+            text = text + "</table>";
+            document.getElementById("matrix").innerHTML = text;
+            check();
+    }
+    function check() {
+    for(count_height=0;count_height<3;count_height++){
+        if(matrix[count_height][0]=="O"&&matrix[count_height][1]=="O"&&matrix[count_height][2]=="O"){
+            alert("Hoan thanh va 1 thang");
+            document.getElementById("matrix").innerHTML = text;
+        }
+        else if(matrix[count_height][0]=="X"&&matrix[count_height][1]=="X"&&matrix[count_height][2]=="X"){
+            alert("Hoan thanh va 2 thang");
+            document.getElementById("matrix").innerHTML = text;
+        }
+    }
+        for(count_width=0;count_width<3;count_width++){
+            if(matrix[0][count_width]=="O"&&matrix[1][count_width]=="O"&&matrix[2][count_width]=="O"){
+                alert("Hoan thanh va 1 thang");
+                document.getElementById("matrix").innerHTML = text;
+            }
+            else if(matrix[0][count_width]=="X"&&matrix[1][count_width]=="X"&&matrix[2][count_width]=="X"){
+                alert("Hoan thanh va 2 thang");
+                document.getElementById("matrix").innerHTML = text;
+            }
+        }
+    }
 </script>
 </body>
 </html>
