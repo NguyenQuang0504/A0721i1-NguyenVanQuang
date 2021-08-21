@@ -28,23 +28,22 @@
     function play(){
         let valuemin = parseInt(prompt("Ban hay nhap gia tri min cua khoang"));
         let valuemax = parseInt(prompt("Ban hay nhap gia tri max cua khoang"));
-        let c;
+        let number;
         let random;
         function TaoSoNgauNhien(min, max) {
             return Math.floor(Math.random() * (max - min)) + min;
         }
-        c = TaoSoNgauNhien(valuemin, valuemax);
-        alert(c);
+        number = TaoSoNgauNhien(valuemin, valuemax);
         random = parseInt(prompt("Ban hay nhap gia tri ban doan"));
         do {
-            if (random < c) {
+            if (random < number) {
                 random = parseInt(prompt("Ban hay tang gia tri ban doan"));
             }
-            if (random > c) {
+            if (random > number) {
                 random = parseInt(prompt("Ban hay giam gia tri ban doan"));
             }
         }
-        while (random != c)
+        while (random != number)
         prompt("Ban da doan dung");
     }
 </script>

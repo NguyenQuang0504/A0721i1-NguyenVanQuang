@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Ung dung vui</title>
+    <style>
+        h1{
+            text-align: center;
+            background-color: orange;
+        }
+    </style>
+</head>
+<body>
+<h1>Ban Hay Nhap Doan Text!</h1>
+<center>
+<textarea name="text" id="textarea" cols="30" rows="10" onkeypress="result()"></textarea>
+</center>
+<script>
+    let text = " ";
+    let count=0;
+    let array = ["T","Ô","I"," ","B","Ị"," ","N","G","U","!","!"];
+    function result() {
+     if(count<array.length){
+         text=text +array[count];
+         document.getElementById("textarea").value = text;
+     }
+     else{
+         count = -1;
+         document.getElementById("textarea").value = " ";
+         text = " ";
+     }
+     count++
+    }
+</script>
+</body>
+</html>
