@@ -65,7 +65,7 @@ function change_matrix() {
     }
     text = text +"</table>";
     document.getElementById("matrix").innerHTML = text;
-    check();
+    setTimeout(check,500);
 }
     function change_matrix1() {
         let text = " ";
@@ -85,7 +85,7 @@ function change_matrix() {
             }
             text = text + "</table>";
             document.getElementById("matrix").innerHTML = text;
-            check();
+            setTimeout(check,500);
     }
     function check() {
     for(count_height=0;count_height<3;count_height++){

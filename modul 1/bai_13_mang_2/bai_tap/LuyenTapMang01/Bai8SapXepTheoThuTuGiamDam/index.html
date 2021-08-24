@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Sap Xep Thu Tu Giam Dan</title>
+</head>
+<body>
+<script>
+    let text = " ";
+    let text1=" ";
+    let N = parseInt(prompt("Ban hay nhap so phan tu cua mang"));
+    let count;
+    let array_input = [];
+    for(count = 0;count<N;count ++){
+        array_input[count] = parseInt(prompt("Ban hay nhap phan tu cua mang"));
+        text1 = text1 + array_input[count] + "&nbsp;";
+    }
+    array_input.sort(function(a, b){return b - a});
+    for(count=0;count<N;count++){
+      text = text +array_input[count] +"&nbsp;";
+    }
+    document.write("Mang ban dau " +text1 +"<br> Mang sau khi sap xep " +text);
+</script>
+</body>
+</html>

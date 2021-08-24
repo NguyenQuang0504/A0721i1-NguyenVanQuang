@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Hien Thi So Nguyen Lon Hon 10 Trong Mang</title>
+    <style>
+        h1{
+            text-align: center;
+            background-color: orange;
+        }
+    </style>
+</head>
+<body>
+<h1>Hien Thi So Nguyen Lon Hon 10 Trong Mang</h1>
+<p id="result"></p>
+<script>
+    let text = " ";
+    let count_kt;
+    let count;
+    let array_input = [];
+    let N = parseInt(prompt("Ban hay nhap so phan tu cua mang "));
+    for( count = 0;count<N;count++){
+        array_input[count]=parseInt(prompt("Ban hay nhap phan tu thu " +(count+1) +" cua mang"))
+    }
+    for(count_kt=0;count_kt<array_input.length;count_kt++){
+        if (array_input[count_kt] >10){
+            text = text + array_input[count_kt] +"<br>";
+        }
+    }
+    document.getElementById("result").innerHTML = "Cac phan tu lon hon 10 trong mang la <br>" +text;
+</script>
+</body>
+</html>

@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Dem So Nguyen Am</title>
+    <style>
+        h1{
+            text-align: center;
+            background-color: orange;
+        }
+    </style>
+</head>
+<body>
+<h1>Kiem tra so nguyen am trong mang</h1>
+<p id="result"></p>
+<script>
+    let text = " ";
+    let count_pt = 0;
+    let text1 = " ";
+    let N = parseInt(prompt("Ban hay nhap so phan tu cua mang"));
+    let count;
+    let array_input = [];
+    for(count = 0;count<N;count ++){
+        array_input[count] = parseInt(prompt("Ban hay nhap phan tu cua mang"));
+        if(array_input[count]<0){
+            count_pt ++;
+            text = text + array_input[count] +"&nbsp;";
+        }
+        text1 = text1 + array_input[count] + "&nbsp;";
+    }
+    document.getElementById("result").innerHTML = "Cac Phan Tu Cua Mang la : " + text1 +" <br>" +"So phan tu trong mang am la: " +count_pt +"<br>" +"Cac phan tu am trong mang la " +text;
+</script>
+</body>
+</html>

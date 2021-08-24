@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Noi Mang</title>
+    <style>
+        h1{
+            text-align: center;
+            background-color: orange;
+        }
+    </style>
+</head>
+<body>
+<h1>Noi Mang</h1>
+<script>
+    let text = " ";
+    let count;
+    let array1 =[];
+    let array2 =[];
+    let array3 = [];
+    for( count = 0; count <10;count ++){
+        array1[count] = prompt("BAN HAY NHAP PT THU "+count +" CUA MANG 1");
+    }
+    for( count = 0; count <10;count ++){
+        array2[count] = prompt("BAN HAY NHAP PT THU "+count +" CUA MANG 2");
+    }
+    for( count = 0; count <20;count ++){
+        if(count < 10){
+            array3[count] = array1[count];
+            text = text + array3[count] +"&nbsp;";
+        }
+        else{
+            array3[count] = array2[count-10];
+            text = text + array3[count] +"&nbsp;";
+        }
+    }
+    document.write(text);
+</script>
+</body>
+</html>

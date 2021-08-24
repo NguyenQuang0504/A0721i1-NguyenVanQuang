@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Phan tu lon nhat</title>
+    <style>
+        h1{
+            text-align: center;
+            background-color: orange;
+        }
+    </style>
+</head>
+<body>
+<h1>Kiem tra phan tu lon nhat va tinh gia tri tb</h1>
+<p id="result"></p>
+<script>
+    let sum = 0;
+    let index =0;
+    let max;
+    let count;
+    let array_input = [];
+    for(count = 0;count <10;count++){
+        array_input[count]=parseInt(prompt("Ban Hay Nhap Gia Tri Phan Tu Thu " +count +" cua mang"));
+    }
+    max = array_input[0];
+    for(count=0;count<array_input.length;count++){
+        if(array_input[count] > max){
+            max=array_input[count];
+            index = count;
+        }
+        sum = sum +array_input[count];
+    }
+    sum = (sum/10);
+    document.getElementById("result").innerHTML = "Phan tu lon nhat trong mang nam o vi tri thu " +index +" va co gia tri la " +max +"<br>"
+    +"Gia tri trung binh cua mang la " +sum;
+</script>
+</body>
+</html>

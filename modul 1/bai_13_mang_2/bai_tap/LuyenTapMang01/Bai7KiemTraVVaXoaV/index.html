@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Kiem tra V va xoa V khoi mang</title>
+    <style>
+        h1{
+            text-align: center;
+            background-color: orange;
+        }
+    </style>
+</head>
+<body>
+<h1>Kiem tra phan tu cua mang va xoa phan tu</h1>
+<p id="check"></p>
+<p id="result"> </p>
+<script>
+    let kiemtra = 0;
+    let text1 = " ";
+    let text=" ";
+    let count;
+    let input_array = [];
+    let V = (prompt("Ban hay nhap V"));
+    let N = parseInt(prompt("Ban hay nhap so phan tu cua mang"));
+    for(count=0;count<N;count++){
+        input_array[count]=prompt("Ban hay nhap pt " +count +" cua mang ");
+        text1 = text1 + input_array[count] +"&nbsp;";
+    }
+    for(count=0; count<input_array.length; count++){
+        if(input_array[count]==V){
+            input_array.splice(count,1);
+            kiemtra =1 ;
+        }
+    }
+    if(kiemtra===1){
+        document.getElementById("check").innerText = "V thuoc mang";
+    }
+    else{
+        document.getElementById("check").innerText = "V khong thuoc mang";
+    }
+    for(count=0;count<input_array.length;count++){
+        text = text + input_array[count]+"&nbsp;";
+    }
+    document.getElementById("result").innerHTML = "Cac phan tu cua mang la " +text1 +"<br> Cac phan tu sau khi xoa la " +text;
+</script>
+</body>
+</html>
