@@ -1,0 +1,36 @@
+<!--Viết chương trình nhập vào một mảng ký tự,-->
+<!--tìm tất cả các ký tự trong mảng là (-) và thay thế các ký tự này bởi ký tự ( _ )-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Thay The Ky Tu</title>
+    <style>
+        h1{
+            text-align: center;
+            background-color: orange;
+        }
+    </style>
+</head>
+<body>
+<h1> Tim Va Thay The Ky Tu</h1>
+<p id="result"></p>
+<script>
+    let text1= " ";
+    let text = " ";
+    let array = [];
+    let count;
+    for(count=0;count<10;count++){
+        array[count] = prompt("Ban hay nhap phan tu thu " +count +" cua mang");
+        text = text + array[count] + "&nbsp;";
+    }
+    for (count=0;count<10;count++){
+        if(array[count] == "-"){
+            array[count] = "_";
+        }
+        text1 = text1 +array[count] +"&nbsp;";
+    }
+    document.getElementById("result").innerHTML = "Mang ban dau la " +text +" <br> Mang sau khi sua la " +text1;
+</script>
+</body>
+</html>

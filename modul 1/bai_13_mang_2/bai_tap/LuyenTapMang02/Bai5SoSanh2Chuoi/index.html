@@ -7,6 +7,7 @@
 <body>
 <h1>So Sanh 2 Chuoi</h1>
 <p id="result"></p>
+<p id="array"></p>
 <script>
     let check =1;
     let array1 = [];
@@ -28,8 +29,12 @@
             check = 0;
         }
     }
+    document.getElementById("array").innerHTML = "Mang 1 la " +text1 +"<br> Mang 2 la " +text2;
     if(check===1){
-        
+        document.getElementById("result").innerHTML = "Mang 1 va mang 2 bang nhau";
+    }
+    else{
+        document.getElementById("result").innerHTML = "Mang 1 va mang 2 khac nhau";
     }
 </script>
 </body>
