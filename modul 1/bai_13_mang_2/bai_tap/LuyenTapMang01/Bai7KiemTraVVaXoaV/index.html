@@ -29,7 +29,9 @@
     for(count=0; count<input_array.length; count++){
         if(input_array[count]==V){
             input_array.splice(count,1);
+            input_array.push(0);
             kiemtra =1 ;
+            count--;
         }
     }
     if(kiemtra===1){
