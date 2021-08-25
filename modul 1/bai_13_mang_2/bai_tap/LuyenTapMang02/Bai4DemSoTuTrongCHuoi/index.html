@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Dem tu trong chuoi</title>
+</head>
+<body>
+<h1>Dem so ky tu trong chuoi</h1>
+<p id="result"></p>
+<script>
+    let string = prompt("Ban hay nhap chuoi ");
+    let array = [];
+    array=string.toString();
+    let number = array.length;
+    let count;
+    let text = " ";
+    for(count=0;count<array.length;count++){
+        text = text +array[count] +"&nbsp;" ;
+    }
+    document.getElementById("result").innerHTML = "Cac ky tu cua chuoi ban nhap la " +text +"<br> So ky tu trong chuoi " +number;
+</script>
+</body>
+</html>

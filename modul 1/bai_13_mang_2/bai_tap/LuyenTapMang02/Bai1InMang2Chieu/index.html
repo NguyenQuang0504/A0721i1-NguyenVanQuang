@@ -3,8 +3,29 @@
 <head>
     <meta charset="UTF-8">
     <title>Im Mang 2 Chieu</title>
+    <style>
+        h1{
+            text-align: center;
+            background-color: orange;
+        }
+    </style>
 </head>
 <body>
-
+<h1>Mang 2 chieu</h1>
+<p id="result"></p>
+<script>
+    let row;
+    let col;
+    let array = [[1,2,3],[4,5,6],[7,8,9]];
+    let text = " ";
+    for(row=0;row<3;row++){
+        text = text + "Hang thu " +row +": &nbsp;";
+        for(col=0;col<3;col++){
+            text = text + array[row][col] +"&nbsp;";
+        }
+        text = text +"<br>"
+    }
+    document.getElementById("result").innerHTML = text;
+</script>
 </body>
 </html>

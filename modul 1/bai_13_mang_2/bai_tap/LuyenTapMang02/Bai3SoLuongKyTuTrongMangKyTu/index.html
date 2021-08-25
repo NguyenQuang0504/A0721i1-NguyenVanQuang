@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>So luong ky tu torng mang</title>
+    <style>
+        h1{
+            text-align: center;
+            background-color: orange;
+        }
+    </style>
+</head>
+<body>
+<h1>Mang Ky Tu</h1>
+<p id="result"></p>
+<script>
+    let text = " ";
+    let check;
+    let number=0;
+    let count;
+    let array = [];
+    let N = parseInt(prompt("Ban hay nhap so pt cua mang"));
+    for(count=0;count<N;count++){
+        array[count] = prompt("Ban hay nhap gia tri " +count +" cua mang ");
+        check = parseInt(array[count]/1);
+        if(check == array[count]){
+            number++;
+        }
+        text = text + array[count] +"&nbsp;"
+    }
+    document.getElementById("result").innerHTML = "Mang ban vua nhap la " +text +"<br> So phan tu la so trong mang " +number;
+</script>
+</body>
+</html>

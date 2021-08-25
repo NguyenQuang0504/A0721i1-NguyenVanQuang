@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Dao Nguoc Mang</title>
+    <style>
+        h1{
+            text-align: center;
+            background-color: orange;
+        }
+    </style>
+</head>
+<body>
+<h1>Dao Nguoc Mang</h1>
+<p id="result"></p>
+<p id="array_ip"></p>
+<script>
+    let text1=" ";
+    let text = " ";
+    let N = parseInt(prompt("Ban hay nhap so phan tu cua mang"));
+    let count;
+    let array_input=[];
+    for(count = 0;count<N;count ++){
+        array_input[count] =prompt("Ban hay nhap phan tu cua mang");
+        text1 = text1 + array_input[count] + "&nbsp;";
+    }
+    array_input=array_input.reverse();
+    for (count=0;count<array_input.length;count++){
+        text = text + array_input[count] +"&nbsp;";
+    }
+    document.getElementById("array_ip").innerHTML = "cac phan tu cua mang khi chua dao la " + text1;
+    document.getElementById("result").innerHTML = "Cac phan tu cua mang sau khi dao la " +text;
+</script>
+</body>
+</html>

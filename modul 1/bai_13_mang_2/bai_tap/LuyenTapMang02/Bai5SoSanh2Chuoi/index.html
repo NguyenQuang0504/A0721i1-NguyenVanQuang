@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>So Sanh 2 chuoi</title>
+</head>
+<body>
+<h1>So Sanh 2 Chuoi</h1>
+<p id="result"></p>
+<script>
+    let check =1;
+    let array1 = [];
+    let array2 = [];
+    text1 =" ";
+    text2 = " ";
+    let N = parseInt(prompt("ban hay nhap kich thuoc 2 mang "));
+    let count;
+    for(count=0;count<N;count++){
+        array1[count]=prompt("ban hay nhap phan tu thu " +count +" cua mang 1");
+        text1= text1 +array1[count] +"&nbsp;";
+    }
+    for(count=0;count<N;count++){
+        array2[count]=prompt("ban hay nhap phan tu thu " +count +" cua mang 2");
+        text2= text2 +array2[count] +"&nbsp;";
+    }
+    for(count=0;count<N;count++){
+        if(array1[count] !== array2[count]){
+            check = 0;
+        }
+    }
+    if(check===1){
+        
+    }
+</script>
+</body>
+</html>
