@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Tic Tac Toa</title>
+    <style>
+        h1{
+            text-align: center;
+            background-color: orange;
+        }
+    </style>
+</head>
+<body>
+<h1> Game co Caro</h1>
+<p id="result"></p>
+<script>
+    let check = true;
+    let count;
+    let array = new Array(10);
+    for(let i=0; i<10;i++){
+        array[i] = Array(10);
+        for(let j=0;j<10;j++){
+            array[i][j]="";
+        }
+    }
+    function printf() {
+        let text = "<table border='1'> ";
+        for (let i = 0; i < 10; i++) {
+            text = text + "<tr>"
+            for (let j = 0; j < 10; j++) {
+                text = text + "<td width='15px' height='15px' name='Cols' id='colums' onclick='play1("+i +"," +j +")'>"+array[i][j]+"</td>";
+            }
+            text = text + "<br>" + "</tr>";
+        }
+        text = text +"</table>";
+        document.getElementById("result").innerHTML=text;
+    }
+    printf();
+    function play1(i,j){
+    if(check && !check_pt(i,j)){
+        array[i][j] = "X";
+        check = false;
+        if(checkWin(i,j)){
+            alert("1 Win");
+        }
+    }
+    else if(!check && !check_pt(i,j)){
+        array[i][j]="O";
+        check = true;
+        if(checkWin(i,j)){
+            alert("2 Win");
+        }
+    }
+    printf();
+    }
+    function check_pt(a,b) {
+    if(array[a][b]!=""){
+        return true;
+    }
+    else {
+        return false;
+    }
+    }
+    function checkWin() {
+        for (let i = 0; i < 10; i++) {
+            for (let j = 0; j < array[i].length; j++) {
+                if (array[i][j] == "X") {
+                    if (array[i][j + 1] == "X" && array[i][j + 2] == "X") {
+                        return true;
+                    }
+                    if (array[i + 1][j] == "X" && array[i + 2][j] == "X") {
+                        return true;
+                    }
+                    if (array[i + 1][j + 1] == "X" && array[i + 2][j + 2] == "X") {
+                        return true;
+                    }
+                    if (array[i + 1][j - 1] == "X" && array[i + 2][j - 2] == "X") {
+                        return true;
+                    }
+                } else if (array[i][j] == "O") {
+                    if (array[i][j + 1] == "O" && array[i][j + 2] == "O") {
+                        return true;
+                    }
+                    if (array[i + 1][j] == "O" && array[i + 2][j] == "O") {
+                        return true;
+                    }
+                    if (array[i + 1][j + 1] == "O" && array[i + 2][j + 2] == "O") {
+                        return true;
+                    }
+                    if (array[i + 1][j - 1] == "O" && array[i + 2][j - 2] == "O") {
+                        return true;
+                    }
+                }
+            }
+        }
+    }
+</script>
+</body>
+</html>
