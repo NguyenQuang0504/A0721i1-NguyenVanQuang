@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Tao va goi ham</title>
+</head>
+<body>
+<script>
+    function checkConfirm( check){
+        let result = " ";
+        if(check){
+            result = "Excellent. We'll play a nice game of chess.";
+        }
+        else{
+            result = "Maybe later then.";
+        }
+        return result;
+    }
+    let check = confirm("Ban hay chon");
+    let result_alert = checkConfirm(check);
+    alert(result_alert);
+</script>
+</body>
+</html>
