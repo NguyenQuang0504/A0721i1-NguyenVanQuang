@@ -5,6 +5,28 @@
     <title>Tim gia tri nho nhat cua mang</title>
 </head>
 <body>
-
+<h1>Tim gia tri nho nhat trong mang</h1>
+<p id="result"></p>
+<p id="min"></p>
+<script>
+    let text = " ";
+    let arr = [];
+    for(let i=0; i<10;i++){
+        arr[i] = parseInt(prompt("Ban hay nhap phan tu mang "));
+        text = text + arr[i] +"&nbsp;";
+    }
+    document.getElementById("result").innerHTML = text;
+    function checkMinArray(array) {
+        let min=array[0];
+        for(let i=0;i<10;i++){
+            if(array[i]<min){
+                min = array[i];
+            }
+        }
+        return min;
+    }
+    let result = checkMinArray(arr);
+    document.getElementById("min").innerText = "Phan tu min la " +result;
+</script>
 </body>
 </html>
