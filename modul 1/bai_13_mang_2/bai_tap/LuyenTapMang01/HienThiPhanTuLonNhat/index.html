@@ -1,34 +1,47 @@
 <!DOCTYPE html>
 <html lang="en">
+​
 <head>
     <meta charset="UTF-8">
-    <title>Phan tu lon nhat</title>
-    <style>
-        h1{
-            text-align: center;
-            background-color: orange;
-        }
-    </style>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
 </head>
+​
 <body>
-<h1>Kiem tra phan tu lon nhat</h1>
-<p id="result"></p>
+<!-- Viết chương trình khởi tạo mảng số nguyên gồm 10 phần tử khác nhau.
+    Chương trình hiển thị ra được phần tử có giá trị lớn nhất trong mảng và vị trí của phần tử đó. -->
 <script>
-    let index =0;
-    let max;
-    let count;
-    let array_input = [];
-    for(count = 0;count <10;count++){
-        array_input[count]=parseInt(prompt("Ban Hay Nhap Gia Tri Phan Tu Thu " +count +"cua mang"));
-    }
-    max = array_input[0];
-    for(count=0;count<array_input.length;count++){
-        if(array_input[count] > max){
-            max=array_input[count];
-            index = count;
+    let mang = [];
+    let max = 0;
+    let index = 0;
+    for (let i = 0; i < 10; i++) {
+        if (i == 0) {
+            mang[i] = parseInt(prompt("Nhập phan tu thu " + i + " vào mảng "));
+        } else {
+            do {
+                mang[i] = parseInt(prompt("Nhập phan tu thu " + i + " vào mảng "));
+                a = mang[i];
+            }
+            while (check(i-1, a) == true)
         }
     }
-    document.getElementById("result").innerHTML = "Phan tu lon nhat trong mang nam o vi tri thu " +index +" va co gia tri la " +max;
+    document.write("mang = [" + mang + "] <br>")
+    for (i = 0; i < mang.length; i++) {
+        if (mang[i] > max) {
+            max = mang[i]
+            index = i;
+        }
+    }
+    function check(i,a){
+        for(i;i>=0;i--){
+            if(a==mang[i]){
+                return true;
+            }
+        }
+    }
+    document.write("Số lớn nhất trong mảng là : " + max + " tại vị trí " + index)
 </script>
 </body>
+​
 </html>
