@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    let number = parseFloat(prompt("Ban hay nhap so muon tinh giai thua"));
+    function giaiThua(number) {
+        if(number==1){
+            return 1;
+        }
+        return number*giaiThua(number-1);
+    }
+    alert(giaiThua(number));
+</script>
+</body>
+</html>

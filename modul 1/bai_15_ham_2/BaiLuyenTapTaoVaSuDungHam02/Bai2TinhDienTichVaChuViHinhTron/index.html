@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    let number = parseFloat(prompt("Ban hay nhap ban kinh hinh tron"));
+    function area(number) {
+        let result = number*number+3.14;
+        return result;
+    }
+    function chuVi(number){
+        let result1 = number*2*3.14;
+        return result1;
+    }
+    let result=area(number);
+    let display = chuVi(number);
+    alert("Dien tich cua hinh tron co ban kinh " +number +"cm la " +result);
+    alert("Chu vi cua hinh tron co ban kinh " +number +"cm la " +display);
+</script>
+</body>
+</html>

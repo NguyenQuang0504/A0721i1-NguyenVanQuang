@@ -6,7 +6,19 @@
 </head>
 <body>
 <script>
-    let  
+    let string_input;
+    string_input=prompt("Ban hay nhap ten ngoi sao");
+    let  star_array = ["Polaris","Aldebaran","Deneb","Vega","Altair","Dubhe","Regulus"];
+    let constellation_array = ["Ursa Minor","Tarurus","Cygnus","Lyra","Aquila","Ursa Major","Leo"];
+    function checkStar(string_ip) {
+        for(let i=0;i<star_array.length;i++) {
+            if (star_array[i] == string_input) {
+                return constellation_array[i];
+            }
+        }
+        return alert("Khong tim thay chom sao tuong ung ");
+    }
+    alert(checkStar(string_input));
 </script>
 </body>
 </html>

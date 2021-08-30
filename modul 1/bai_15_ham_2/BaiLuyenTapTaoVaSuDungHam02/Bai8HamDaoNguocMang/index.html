@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<p id="result"></p>
+<script>
+    let array=[1,2,3,4,5,6,7,8,9,10];
+    let text=" ";
+    function daoNguocMang(array) {
+        for(let i=0;i<5;i++){
+            let c;
+            c = array[i];
+            array[i]=array[9-i];
+            array[9-i]=c;
+        }
+        for(let i=0;i<10;i++){
+            text = text +array[i] +"&nbsp;";
+        }
+        document.getElementById("result").innerHTML = text;
+    }
+ daoNguocMang(array);
+</script>
+</body>
+</html>

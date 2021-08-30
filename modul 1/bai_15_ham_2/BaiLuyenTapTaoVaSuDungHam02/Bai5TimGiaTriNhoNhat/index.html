@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    let number_1 = parseInt(prompt("ban hay nhap so thu nhat"));
+    let number_2 = parseInt(prompt("ban hay nhap so thu hai"));
+    let number_3 = parseInt(prompt("ban hay nhap so thu ba"));
+    function check(a,b,c) {
+        if(a<b&&a<c){
+            return a;
+        }
+        else if(b<c){
+            return b;
+        }
+        else {
+            return c;
+        }
+    }
+    alert("So nho nhat la " +check(number_1,number_2,number_3));
+</script>
+</body>
+</html>
