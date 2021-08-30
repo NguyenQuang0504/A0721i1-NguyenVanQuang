@@ -5,6 +5,19 @@
     <title>Title</title>
 </head>
 <body>
-
+<script>
+    let count = 0;
+    let string = prompt("Ban hay nhap ky tu muon kiem tra");
+    let array=["a","s","d","f","g","h","h","j","k","l","a","f","x","c","r","d","r","d","w"]
+    function checkString(string,array) {
+        for(let i=0;i<array.length;i++){
+            if(string==array[i]){
+                count=count+1;
+            }
+        }
+        return count;
+    }
+    alert(checkString(string,array));
+</script>
 </body>
 </html>
