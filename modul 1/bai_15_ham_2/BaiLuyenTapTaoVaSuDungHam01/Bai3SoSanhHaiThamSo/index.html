@@ -1,0 +1,26 @@
+<!--Tạo hàm nhận vào hai tham số. Nếu giá trị của tham số thứ nhất lớn hơn tham số thứ hai,-->
+<!--hiển thị hộp thoại thông báo cho người dùng. -->
+<!--Nếu giá trị của tham số thứ nhất nhỏ hơn hoặc bằng tham số thứ hai, trả về tổng của hai tham số.-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    let number_1 = parseFloat(prompt("Ban hay nhap so thu nhat "));
+    let number_2 = parseFloat(prompt("Ban hay nhap so thu hai"));
+    function result(a,b) {
+        if(a>b){
+            alert("So thu nhat lon hon so thu hai");
+        }
+        else{
+            alert("So thu hai lon hon hoac bang so thu nhat")
+        }
+        return a+b;
+    }
+    alert(result(number_1,number_2));
+</script>
+</body>
+</html>

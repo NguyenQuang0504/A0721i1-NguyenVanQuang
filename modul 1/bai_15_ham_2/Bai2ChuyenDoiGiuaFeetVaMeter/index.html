@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Chuyen Doi Giua Feet Va Meters</title>
+</head>
+<body>
+<center>
+<h1>Chuyen Doi Giua Foot Va Meter</h1>
+<input type="button" name="btn" id="button" onclick="exchange()" value="Foot To Meter!">
+<input type="button" name="btn" id="button1" onclick="exchange1()" value="Meter To Foot!">
+<p id="result"></p>
+</center>
+<script>
+    function footToMeter(foot) {
+        let foottometer = foot*0.305;
+        return foottometer;
+    }
+    function meterToFoot(meter) {
+        let metertofoot = meter*3.279;
+        return metertofoot;
+    }
+    function exchange() {
+        let foot = parseFloat(prompt("ban hay nhap foot"));
+        let result = footToMeter(foot);
+        document.getElementById("result").innerHTML = "Ket qua chuyen Foot To Meter: " +result;
+    }
+    function exchange1() {
+        let meter = parseFloat(prompt("ban hay nhap meter"));
+        let result = meterToFoot(meter);
+        document.getElementById("result").innerHTML = "Ket qua chuyen Meter To Foot : " +result;
+    }
+</script>
+</body>
+</html>

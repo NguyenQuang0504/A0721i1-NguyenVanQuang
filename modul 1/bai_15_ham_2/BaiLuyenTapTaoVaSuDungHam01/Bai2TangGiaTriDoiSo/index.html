@@ -1,0 +1,31 @@
+<!--Bài 2: Tạo hàm nhận vào một đối số dạng số, tăng giá trị đối số đó lên 1 và trả lại giá trị cho lời gọi hàm.-->
+<!--Gọi hàm từ trong phần <body> của trang web và hiển thị kết quả lên màn hình.-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<center>
+<h1>Tang Doi So Len 1 Don Vi</h1>
+<p>Doi so sau khi tang la: <i id="result"></i></p>
+<input type="button" name="btn" id="button" value="Nhap doi so!" onclick="input()">
+<input type="button" name="btn" id="button1" value="Hien thi ket qua" onclick="display()">
+</center>
+<script>
+    let number;
+    function increaseNumber(number) {
+        let result = ++number;
+        return result;
+    }
+    function input() {
+        number = parseFloat(prompt("Ban hay nhap doi so"));
+    }
+    function display() {
+       let result1 = increaseNumber(number);
+       document.getElementById("result").innerHTML = result1;
+    }
+</script>
+</body>
+</html>
