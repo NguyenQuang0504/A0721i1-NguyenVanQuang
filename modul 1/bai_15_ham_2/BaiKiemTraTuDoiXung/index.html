@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    let array=prompt("Ban hay nhap chuoi muon kiem tra doi xung");
+    array = array.toString();
+    for(let i=0;i<array.length;i++){
+
+    }
+   function check(array) {
+        for(let i=0;i<array.length/2;i++){
+            let x= array.length-1;
+            if(array[i]!=array[x-i]){
+                return false;
+            }
+        }
+        return true;
+   }
+    alert(check(array));
+</script>
+</body>
+</html>
