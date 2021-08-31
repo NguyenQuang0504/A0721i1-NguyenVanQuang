@@ -21,13 +21,13 @@
         return metertofoot;
     }
     function exchange() {
-        let foot = parseFloat(prompt("ban hay nhap foot"));
-        let result = footToMeter(foot);
+        let foot_input = parseFloat(prompt("ban hay nhap foot"));
+        let result = footToMeter(foot_input);
         document.getElementById("result").innerHTML = "Ket qua chuyen Foot To Meter: " +result;
     }
     function exchange1() {
-        let meter = parseFloat(prompt("ban hay nhap meter"));
-        let result = meterToFoot(meter);
+        let meter_input = parseFloat(prompt("ban hay nhap meter"));
+        let result = meterToFoot(meter_input);
         document.getElementById("result").innerHTML = "Ket qua chuyen Meter To Foot : " +result;
     }
 </script>

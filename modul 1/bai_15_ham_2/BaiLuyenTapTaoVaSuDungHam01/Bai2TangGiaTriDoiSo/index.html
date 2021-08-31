@@ -14,16 +14,16 @@
 <input type="button" name="btn" id="button1" value="Hien thi ket qua" onclick="display()">
 </center>
 <script>
-    let number;
+    let number_input;
     function increaseNumber(number) {
         let result = ++number;
         return result;
     }
     function input() {
-        number = parseFloat(prompt("Ban hay nhap doi so"));
+        number_input = parseFloat(prompt("Ban hay nhap doi so"));
     }
     function display() {
-       let result1 = increaseNumber(number);
+       let result1 = increaseNumber(number_input);
        document.getElementById("result").innerHTML = result1;
     }
 </script>
