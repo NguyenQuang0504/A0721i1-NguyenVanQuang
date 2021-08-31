@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Quanlysanpham</title>
+    <style>
+        button{
+            width: 60px;
+            height: 30px;
+            background-color: green;
+        }
+        input{
+            width: 200px;
+            height: 30px;
+        }
+    </style>
+</head>
+<body>
+<h2>Add new product</h2>
+<input type="text" id="add" name="text_input" placeholder="New Product">
+<button type="button" name="btn" onclick="add()">Add</button>
+<p id="result"></p>
+<script>
+    let text = " ";
+    let aray_product=["Sony Xperia", "Samsum Galaxy","Nokia 6","Xiaomi Redmi Note 4","Apple Iphone 6S","Xiaomi Mi 5S Plus","Fujtsu F-04E","Oppo A71"];
+    // Display mang
+    function display() {
+        text = text + "<table border='1'>";
+        for (let i = 0; i < aray_product.length; i++) {
+            text = text + "<tr>" + "<td>" +"<input type='text' id='"+i+"' value='"+aray_product[i]+"'>" + "</td>";
+            text = text + "<td>" + "<button type='button' onclick='Delete(" + i + ")'>Delete</button>" + "</td>";
+            text = text + "<td>" + "<button type='button' onclick='edit(" + i + ")'>Edit</button>" + "</td>";
+            text = text + "</tr>";
+        }
+        text = text + "</table>";
+        document.getElementById("result").innerHTML = text;
+        text = " ";
+    }
+    display();
+    // Function chuc nang
+    function Delete(number){
+        for(i=0;i<aray_product.length;i++){
+            if(number==i){
+                aray_product.splice(i,1);
+            }
+        }
+        display();
+    }
+    function edit(number) {
+        for(let i=0;i<aray_product.length;i++){
+            if(number==i){
+                aray_product[i]=document.getElementById(i).value;
+                alert("Ban moi sua thanh phan thu " +i +" thanh " +aray_product[i]);
+            }
+        }
+        display();
+    }
+    function add() {
+        let new_product = document.getElementById("add").value;
+        aray_product.push(new_product);
+        display();
+    }
+</script>
+</body>
+</html>
