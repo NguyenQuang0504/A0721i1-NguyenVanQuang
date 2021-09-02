@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>xaydunglophinhtron</title>
+</head>
+<body>
+<script>
+    class Circle {
+        constructor( radius, color ) {
+            this.radius = radius;
+            this.color = color;
+            this.Circle = function (element) {
+                return this.element = element;
+            }
+            this.getRadius = function () {
+                return this.radius;
+            }
+            this.getArea = function () {
+                return Math.PI*this.radius*this.radius;
+            }
+        }
+    }
+    let circle = new Circle(2);
+    alert("Ban kinh cua duong tron la "+circle.getRadius());
+    alert("Dien tich cua hinh tron la "+circle.getArea());
+</script>
+</body>
+</html>

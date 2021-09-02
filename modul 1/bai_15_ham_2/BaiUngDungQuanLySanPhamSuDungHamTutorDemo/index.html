@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<input id="productName" type="text" placeholder="New product">
+<button onclick="addNewProduct()">Add New Product</button><br>
+<span>Số lượng sản phẩm :</span> <span id="total"></span>
+<p id="result"></p>
+<script>
+    let productList=["Sam Sung","Nokia","Iphone","HTC"];
+    display();
+    function addNewProduct() {
+        let newProduct = document.getElementById("productName").value;
+        if (newProduct==""){
+            alert("Bạn cần nhập tên sản phầm");
+        }else {
+            productList.push(newProduct);
+            document.getElementById("productName").value="";
+        }
+        display();
+
+    }
+    function display() {
+        let tableString ='<table border="1">\n' +
+            '    <tr>\n' +
+            '        <th>STT</th>\n' +
+            '        <th>Name</th>\n' +
+            '        <th>Edit</th>\n' +
+            '        <th>Delete</th>\n' +
+            '    </tr>';
+        for (let i =0;i<productList.length;i++){
+            tableString+='<tr>\n' +
+                '        <td>'+(i+1)+'</td>\n' +
+                '        <td>'+productList[i]+'</td>\n' +
+                '        <td><input type="button" value="Edit" onclick="editProduct('+i+')"></td>\n' +
+                '        <td><input type="button" value="Delete"onclick="deleteProduct('+i+')"></td>\n' +
+                '    </tr>';
+        }
+        tableString+='</table>';
+        document.getElementById("result").innerHTML=tableString;
+        document.getElementById("total").innerHTML=productList.length;
+
+    }
+    function editProduct(id) {
+        let editProduct = prompt("Nhập tến sản phẩm mới");
+        if (editProduct==""){
+            alert("Làm ơn nhập tến sản phẩm")
+        }else if (editProduct==null){
+            alert("Bạn không muốn sửa tên")
+        }else {
+            productList[id]=editProduct;
+        }
+
+        display();
+
+    }
+    function deleteProduct(id) {
+        let conf= confirm("Bạn có muốn xóa sản phẩm: "+ productList[id]);
+        if (conf){
+            productList.splice(id,1);
+            alert("Bạn đã xóa thành công")
+        }else {
+            alert("Bạn không xóa sản phẩm")
+        }
+        display();
+    }
+</script>
+</body>
+</html>

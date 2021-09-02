@@ -8,10 +8,12 @@
             width: 60px;
             height: 30px;
             background-color: green;
+            border: 1px solid white;
         }
         input{
             width: 200px;
             height: 30px;
+            border: 1px solid black;
         }
         table{
             border-collapse: collapse;
@@ -25,7 +27,7 @@
 <center>
 <h1>Ung dung quan ly san pham</h1>
 <h2>Add new product</h2>
-<input type="text" id="add" name="text_input" placeholder="New Product">
+<input type="text" id="add" name="text_input" placeholder="New Product" value="">
 <button type="button" name="btn" onclick="add()">Add</button>
 <h2>Product</h2>
 <p id="result"></p>
@@ -67,8 +69,14 @@
     }
     function add() {
         let new_product = document.getElementById("add").value;
-        aray_product.push(new_product);
-        display();
+        if(new_product==""){
+            alert("Ban can nhap ten sp");
+        }
+        else{
+            aray_product.push(new_product);
+            document.getElementById("add").value = "";
+            display();
+        }
     }
 </script>
 </body>
