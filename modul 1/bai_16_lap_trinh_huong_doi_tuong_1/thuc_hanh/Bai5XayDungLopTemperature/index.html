@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    class Temperature {
+        constructor(C) {
+            this.C = C;
+            this.CtoF = function () {
+                return (C*1.8)+32;
+            }
+            this.CtoKevin = function () {
+                return (C+273);
+            }
+        }
+    };
+    let temperature = new Temperature(25);
+    let doF = temperature.CtoF();
+    let doKevin = temperature.CtoKevin();
+    alert("Do F " + doF);
+    alert("Do Kevin " +doKevin);
+</script>
+</body>
+</html>
