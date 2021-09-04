@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Objects</title>
+</head>
+<body>
+<div id="game"></div>
+<script>
+    function Hero(image, top, left, size,speed){
+        this.image = image;
+        this.top = top;
+        this.left = left;
+        this.size = size;
+        //Them thuoc tinh
+        this.speed = speed;
+        //Them phuong thuc
+        this.changeSpeed = function(){
+            let speed = parseFloat(prompt("ban hay nhap toc do"));
+            this.speed = speed;
+        }
+        this.getHeroElement = function(){
+            return '<img width="'+ this.size + '"' +
+                ' height="'+ this.size + '"' +
+                ' src="' + this.image +'"' +
+                ' style="top: '+this.top+'px; left:'+this.left+'px;position:absolute;" />';
+        }
+
+        this.moveRight = function(){
+            this.left += this.speed;
+        }
+        this.moveUnder = function(){
+            this.top += this.speed;
+        }
+    }
+    var hero = new Hero('pikachu/pikachu.png', 20, 30, 200);
+    hero.changeSpeed();
+    function start(){
+        if(hero.left < window.innerWidth - hero.size){
+            hero.moveRight();
+        }
+        else if(hero.top<window.innerHeight-hero.size){
+            hero.moveUnder();
+        }
+        document.getElementById('game').innerHTML = hero.getHeroElement();
+        setTimeout(start,500)
+    }
+
+    start();
+</script>
+</body>
+</html>

@@ -5,12 +5,16 @@
     <title>Title</title>
 </head>
 <body>
+<h2>Android Phone</h2>
 <button onclick="On_OfPhone()">Nut Nguon</button>
 <button onclick="messing()">Soạn tin nhắn</button>
-<button onclick="display()">Doc tin nhan</button>
 <button onclick="battering()">Sạc pin</button>
 <p id="battering"></p>
 <p id="status"></p>
+<br>
+<hr>
+<h2>IOS Phone</h2>
+<button onclick="display()">Doc tin nhan den o dien thoai Ihone</button>
 <p id="result"></p>
 <script>
     class Phone {
@@ -37,11 +41,16 @@
             this.checkPhone();
         }
         // Khai bao phuong thuc xac pin
-        charge(){
+        chargeUp(){
             for (this.battery; this.battery < 100; this.battery++) {
                 this.battery = this.battery + 1;
             }
             document.getElementById("battering").innerText = "Dang xac pin " + this.battery + "%";
+        }
+        //Khai bao pt tieu hao pin
+        chargeDow(){
+            this.battery = this.battery -1;
+            document.getElementById("battering").innerText =this.battery + "%";
         }
         // Khai bao phuong thuc nhap message
         editSendMessage(message){
@@ -64,7 +73,7 @@
         phoneAndroid.On_OfPhoe();
     }
     function battering() {
-        phoneAndroid.charge();
+        phoneAndroid.chargeUp();
     }
     function messing() {
         if(phoneAndroid.status) {
@@ -74,7 +83,9 @@
             check = confirm("Ban chac chan muon gui tin nhan?");
             if (check) {
                 phoneAndroid.editSendMessage(message);
+                phoneAndroid.chargeDow();
             }
+
         }
         else {
             alert("Ban hay bat dien thoai");

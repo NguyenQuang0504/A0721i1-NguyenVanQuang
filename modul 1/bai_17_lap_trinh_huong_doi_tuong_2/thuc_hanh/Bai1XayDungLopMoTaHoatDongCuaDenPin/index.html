@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+</head>
+<body>
+<h1>Trang Thai Den Pin</h1>
+<button onclick="switch1()">Doi trang thai den</button>
+<button onclick="thayPin()">Thay Pin khac</button>
+<p id="info"></p>
+<p id="light"></p>
+<script>
+    class   Battery {
+        constructor(energy) {
+            this.energy = energy;
+        }
+        //Phuong thuc giup thay doi energy
+        setEnergy(energy){
+            this.energy = energy;
+        }
+    //    Phuong thuc lay gia tri cua pin
+        getEnergy(){
+            return this.energy;
+        }
+    //    Phuong thuc giam gia tri cua pin
+        decreaseEnergy() {
+            this.energy = this.energy-1;
+        }
+    }
+    //Khai bao class lamps voi thuoc tinh status va thuoc tinh battery la mot doi tuong cua class Battery
+    class Lamps{
+        constructor(status,battery) {
+            this.status = status;
+            this.battery = battery;
+        }
+        setBattery(battery){
+            this.battery = battery;
+        }
+        getBatteryInfo(){
+            return this.battery.getEnergy();
+        }
+        light(){
+            if(status){
+                return true;
+            }
+            else {
+                return false;
+            }
+        }
+        OnOffSwitch(){
+            this.status = !this.status;
+        }
+    }
+    let battery = new Battery();
+    battery.setEnergy(100);
+    let lamp = new Lamps(true);
+    lamp.setBattery(battery);
+    function switch1() {
+        lamp.OnOffSwitch();
+        checklight();
+    }
+    function batteryChange() {
+
+        if(battery.getEnergy()>0&&lamp.status) {
+            battery.decreaseEnergy();
+            document.getElementById("info").innerHTML = "Luong pin con lai la " +battery.getEnergy() +"%";
+        }
+        else {
+            document.getElementById("info").innerHTML = "Luong pin con lai la " +battery.getEnergy() +"%";
+        }
+    }
+    function checklight() {
+        if(lamp.status&&battery.getEnergy()>0){
+            document.getElementById("light").innerText = "Den dang bat ";
+            //Khi den dang bat thi sau 1s thi goi ham giam pin 1 lan
+            document.getElementById("info").innerHTML = "Luong pin con lai la " +battery.getEnergy() +"%";
+            setInterval(batteryChange, 1000);
+        }
+        else{
+            document.getElementById("light").innerText = "Den dang tat ";
+        }
+    }
+    function thayPin() {
+        alert("ban da thay pin moi");
+        battery.setEnergy(100);
+    }
+</script>
+</body>
+</html>
