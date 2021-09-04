@@ -5,10 +5,86 @@
     <title>Title</title>
 </head>
 <body>
+<button onclick="On_OfPhone()">Nut Nguon</button>
+<button onclick="messing()">Soạn tin nhắn</button>
+<button onclick="display()">Doc tin nhan</button>
+<button onclick="battering()">Sạc pin</button>
+<p id="battering"></p>
+<p id="status"></p>
+<p id="result"></p>
 <script>
     class Phone {
-        constructor(pin, ) {
+        constructor(status,battery,edit_message,input_message,out_message) {
+            this.status = status;
+            this.battery = battery;
+            this.edit_message = edit_message;
+            this.input_message = input_message;
+            this.out_message = out_message;
         }
+        // Khai bao phuong thuc kiem tra trang thai status
+        checkPhone() {
+            if(this.status){
+                document.getElementById("status").innerText = " Dien thoai dang bat ";
+            }
+            else {
+                document.getElementById("status").innerText = " Dien thoai dang tat ";
+            }
+            document.getElementById("battering").innerText = this.battery +"%";
+        }
+        // Khai bao phuong thuc cua nut nguon
+        On_OfPhoe(){
+            this.status = !this.status;
+            this.checkPhone();
+        }
+        // Khai bao phuong thuc xac pin
+        charge(){
+            for (this.battery; this.battery < 100; this.battery++) {
+                this.battery = this.battery + 1;
+            }
+            document.getElementById("battering").innerText = "Dang xac pin " + this.battery + "%";
+        }
+        // Khai bao phuong thuc nhap message
+        editSendMessage(message){
+            this.edit_message = message;
+            this.input_message = message;
+            this.out_message = message;
+        }
+        //Lay gia tri o hop thu den
+        getInPutMessage(){
+          return  this.input_message
+        }
+        //Lay gia tri o hop thu gui di
+        getOutPutMassage(){
+            return this.out_message;
+        }
+    }
+    let phoneAndroid = new Phone(false,50,"","","");
+    phoneAndroid.checkPhone();
+    function On_OfPhone() {
+        phoneAndroid.On_OfPhoe();
+    }
+    function battering() {
+        phoneAndroid.charge();
+    }
+    function messing() {
+        if(phoneAndroid.status) {
+            let message;
+            let check;
+            message = prompt("Nhap tin nhan");
+            check = confirm("Ban chac chan muon gui tin nhan?");
+            if (check) {
+                phoneAndroid.editSendMessage(message);
+            }
+        }
+        else {
+            alert("Ban hay bat dien thoai");
+        }
+    }
+    // Khai bao doi tuong iphone co trang thai bat, pin 100 , soan thu la rong, hop thi den la hop thu di cua android
+    let phoneIos = new Phone(true,100,"","","");
+    function display() {
+        phoneIos.input_message = phoneAndroid.getOutPutMassage();
+        document.getElementById("result").innerHTML = "Tin nhan den la " +phoneIos.getInPutMessage();
     }
 </script>
 </body>

@@ -12,27 +12,27 @@
             this.day = day;
             this.month = month;
             this.year = year;
+        }
             /*khoi tao phuong thuc de tra ve day, month, year*/
-            this.getDay = function () {
+            getDay() {
                 return this.day;
             }
-            this.getMonth = function () {
+            getMonth() {
                 return this.month;
             }
-            this.getYear = function () {
+            getYear() {
                 return this.year;
             }
             // }Xây dựng phương thức thiết đặt lại giá trị các thuộc tính day, month, year
-            this.setDay = function (day) {
+            setDay(day) {
                 this.day = day;
             }
-            this.setMonth = function (month) {
+            setMonth(month) {
                 this.month = month;
             }
-            this.setYear = function (year) {
+            setYear(year) {
                 this.year = year;
             }
-        }
     };
     // Sử dụng lớp vừa tạo. Tạo đối tượng date với ngày:2, tháng:2, năm: 2007:
     let date = new MyDate(2,2,2007);
