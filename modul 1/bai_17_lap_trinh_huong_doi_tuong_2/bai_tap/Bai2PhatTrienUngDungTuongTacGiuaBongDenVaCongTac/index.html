@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<h3>Bài tập công tắc bóng đèn</h3>
+<img src="img/pic_bulboff.gif" id="lamp">
+<br>
+<h3 id="result">Bóng đèn đang tắt</h3>
+<button onclick="turnOn_turnOff()">TurnOff_TurnOn</button>
+
+<script>
+class SwitchButton {
+    constructor(status) {
+        this.status = status;
+    }
+
+    turnOn_turnOff() {
+        this.status = !this.status;
+    }
+}
+
+class Light {
+    constructor(switchButton) {
+        this.button = switchButton;
+    }
+
+    switch() {
+        if (this.button.status) {
+            document.getElementById("lamp").src = "img/pic_bulbon.gif";
+            document.getElementById("result").innerText = "Bóng đèn đang bật"
+        } else {
+            document.getElementById("lamp").src = "img/pic_bulboff.gif";
+            document.getElementById("result").innerText = "Bóng đèn đang tắt"
+        }
+    }
+}
+
+let switchButton = new SwitchButton(false);
+let lamp1 = new Light(switchButton);
+
+function turnOn_turnOff() {
+    switchButton.turnOn_turnOff();
+    lamp1.switch();
+}
+</script>
+</body></html>
