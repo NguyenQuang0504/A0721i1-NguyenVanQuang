@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<h1>Ung dung mo ta cau chuyen Adam Eva</h1>
+<b>Thong tin cua Adam</b>
+<p id="adam"></p>
+<button id="eat" name="eatApple" onclick="adamEatApple()">An tao!</button>
+<button id="voice" name="eatApple" onclick="adamVoice()">Adam Voice!</button>
+<br>
+<b>Thong tin cua Eva</b>
+<p id="eva"></p>
+<button id="eat1" name="eatApple" onclick="evaEatApple()">An tao!</button>
+<button id="voice1" name="eatApple" onclick="evaVoice()">Eva Voice!</button>
+<br>
+<b>Thong tin qua tao</b>
+<p id="wieghtApple"></p>
+<script>
+    class Apple{
+        constructor(weight) {
+            this._weight = weight;
+        }
+        //Khai bao thuoc tinh giup giam trong luong qua tao
+        getWieght(){
+            return this._weight;
+        }
+        decresae(){
+            this._weight = this._weight -1;
+        }
+        //Khai bao thuoc tinh kiem tra da an het tao hay chua
+        isEmpty(){
+            if(this._weight>0){
+                return true;
+            }
+            else{
+                return false;
+            }
+        }
+    }
+    class Human{
+        constructor(name, gender, weight) {
+            this.name = name;
+            this.gender = gender;
+            this.weight = weight;
+        }
+        //Khai bao phuong thuc set va get cac thuoc tinh cua class
+        setName(name){
+            this.name = name;
+        }
+        setGender(gender){
+            this.gender = gender;
+        }
+        setWeight(weight){
+            this.weight = weight;
+        }
+        getName(){
+            return this.name;
+        }
+        getWeight(){
+            return this.weight;
+        }
+        //Khai bao phuong thuc giup kiem tra gioi tinh nam, neu dung tra ve true
+        isMale(){
+            if(this.gender){
+                return true;
+            }
+            else{
+                return false;
+            }
+        }
+        //Khai bao phuong thuc kiem tra khoi luong qua tao, tham so la doi tuong cua class apple
+        checkApple(apple){
+            if(apple.isEmpty()){
+                alert("Qua tao van chua an het");
+            }
+            else{
+                alert("Qua tao da bi an het roi ");
+            }
+        }
+        eatApple(apple){
+            if(apple.isEmpty()){
+                alert(this.getName() +" da can 1 mieng");
+                apple.decresae();
+            }
+            else{
+                alert("Qua tao da bi an het roi ");
+            }
+        }
+        sayVoic(string){
+            alert("Said:" +string);
+        }
+    }
+    //Khai bao doi tuong va set cac thuoc tinh
+    let adam = new Human();
+    adam.setName("Adam");
+    adam.setWeight(60);
+    adam.setGender(true);
+    let eva = new Human();
+    eva.setName("Eva");
+    eva.setWeight(45);
+    eva.setGender(false);
+    let apple = new Apple(10);
+//    Viet cac ham chuc nang noi chuyen hay an tao
+    function adamEatApple() {
+        adam.eatApple(apple);
+        display();
+    }
+    function evaEatApple() {
+        eva.eatApple(apple);
+        display();
+    }
+    function display(){
+        document.getElementById("wieghtApple").innerHTML = "Khoi luong cua qua tao la: " +apple.getWieght();
+    }
+    function adamVoice(){
+        adam.sayVoic("Yeu Eva");
+    }
+    function evaVoice(){
+        eva.sayVoic("Yeu Adam");
+    }
+//    Ham hien thi thong tin
+    document.getElementById("adam").innerHTML = "Ten: " +adam.getName() +"<br> Can nang: " +adam.getWeight();
+    document.getElementById("eva").innerHTML = "Ten: " +eva.getName() +"<br> Can nang: " +eva.getWeight();
+</script>
+</body>
+</html>
