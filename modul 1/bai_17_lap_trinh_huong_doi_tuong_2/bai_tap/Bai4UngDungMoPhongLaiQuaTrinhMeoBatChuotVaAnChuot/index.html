@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<h1>Mo ta meo bat va an chuot</h1>
+<h2>Thong tin cua con meo</h2>
+<br>
+<p id="infoCat"></p>
+<button id="set_speed" onclick="set_speed()">Set toc do cho con meo!</button>
+<button id="camture_rat" onclick="camture_rat()">Bat chuot!</button>
+<button onclick="eatRat()">An chuot!</button>
+<button id="cat_voice" onclick="cat_voice()">Con meo voice!</button>
+<h2>Thong tin cua con chuot</h2>
+<br>
+<p id="infoRat"></p>
+<button onclick="rat_voice()">Con chuot voice!</button>
+
+<script>
+    class   Rat {
+        constructor(name,weight,speed,die,voice) {
+            this.name = name;
+            this.weight = weight;
+            this.speed = speed;
+            this.die = die;
+            this.voice = voice;
+        }
+        setvoice(string){
+            if(this.die){
+                this.voice = "Chuot da chet roi";
+            }
+            else{
+                this.voice = string;
+            }
+        }
+        checkDie(){
+            if(this.die){
+                alert("Chuot da chet");
+                this.speed = 0;
+            }
+            else{
+                alert("Chuot van con song");
+            }
+        }
+    }
+    class Cat{
+        constructor(name,weight, maxSpeed, voice,speed) {
+            this.name = name;
+            this.weight = weight;
+            this.maxSpeed = maxSpeed;
+            this.voice = voice;
+            this.speed = speed;
+        }
+        setVoice(string){
+            this.voice = string;
+        }
+        setSpeedCat(speed){
+            if(speed<this.maxSpeed){
+                this.speed = speed;
+            }
+            else{
+                alert("Meo khong the chay den toc do do");
+            }
+        }
+        changeWeight(Rat){
+            this.weight = this.weight +Rat.weight;
+        }
+        captureRat(Rat){
+            if(this.speed >= Rat.speed){
+                alert("Con chuot da bi bat");
+            }
+            else{
+                alert("Con meo da that bai");
+            }
+        }
+        eatRat(Rat){
+            if(Rat.die){
+                alert("Chuot da chet roi!. Khong an dau");
+            }
+            else {
+                alert("Con chuot nay ngon qua!! Qua da <3");
+                this.changeWeight(Rat);
+                Rat.die = true;
+            }
+        }
+    }
+    let cat = new Cat("Tom",100,120,"",100);
+    let rat = new Rat("Jerry",10,70,false,"");
+    function displayCat1(){
+        document.getElementById("infoCat").innerHTML = "Con meo ten la: " +cat.name +"<br> Con meo co khoi luong la: " +cat.weight +"<br> Con meo co toc do toi da la: " +cat.maxSpeed +"<br> Toc do hien tai cua con meo: " +cat.speed;
+    }
+    function displayrat(){
+        document.getElementById("infoRat").innerHTML = "Con chuot ten la: " +rat.name +"<br> Con chuot co khoi luong la: " +rat.weight +"<br> Toc do hien tai cua con chuot: " +rat.speed +"<br>Con chuot da chet " +rat.die;
+    }
+    displayrat();
+    displayCat1();
+    function set_speed() {
+        let speed = parseFloat(prompt("Ban hay set toc do cua con meo"));
+        cat.setSpeedCat(speed);
+        displayCat1();
+    }
+    function camture_rat() {
+        cat.captureRat(rat);
+    }
+    function eatRat() {
+        cat.eatRat(rat);
+        displayCat1();
+        displayrat();
+    }
+    function cat_voice() {
+        let voice = prompt("Ban muon con meo noi gi? ");
+        cat.setVoice(voice);
+        alert(cat.voice);
+    }
+    function rat_voice() {
+        let voice = prompt("Ban muon con chuot noi gi? ");
+        rat.setvoice(voice);
+        alert(rat.voice);
+    }
+</script>
+</body>
+</html>
