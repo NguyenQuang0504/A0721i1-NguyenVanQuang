@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<h2>Thong tin cua Tv</h2>
+<p id="info_television"></p>
+<p id="info_remote"></p>
+<button id="change" onclick="changeChannel1()">Chuyen kenh!</button>
+<button onclick="upVolum()">Tang am luong!</button>
+<button onclick="dowVolum()">Giam am luong!</button>
+<button onclick="OnOff()">Bat tat TV</button>
+<script>
+    class Remote{
+        constructor(id) {
+            this.id = id;
+        }
+        changeChannel(){
+            let channel = parseInt(prompt("Ban hay nhap kenh muon bat"));
+            return channel;
+        }
+        increaseVolum(Tv){
+            Tv= Tv + 1;
+        }
+        reduceVolum(Tv){
+            Tv= Tv-1;
+        }
+    }
+    class Television{
+        constructor(channel,volum,onoff,remote) {
+            this.channel = channel;
+            this.volum = volum;
+            this.onoff = onoff;
+            this.remote = remote;
+        }
+        getOnOff(){
+            return !this.onoff
+        }
+        changeChannelTV(){
+            this.channel = this.remote.changeChannel();
+        }
+        increaseVolumTV(){
+           this.volum = this.remote.increaseVolum(this.volum);
+        }
+        reduceVolumTV(){
+            this.volum = this.remote.reduceVolum(this.volum);
+        }
+    }
+    let remote = new Remote(1);
+    let television = new Television(2,30,true,remote);
+    function display() {
+        if(television.onoff){
+            document.getElementById("info_television").innerHTML = "Ti vi dang bat: " +television.onoff +"<br> Ti vi dang bat kenh: " +television.channel +"<br> Am luong cua ti vi la: " +television.volum;
+        }
+        else{
+            document.getElementById("info_television").innerText = "Ti Vi da tat";
+        }
+    }
+    display();
+    function changeChannel1() {
+        if(television.onoff){
+            television.changeChannelTV();
+            display();
+        }
+        else {
+            alert("Ti Vi da tat roi");
+        }
+    }
+    function upVolum() {
+        if(television.onoff) {
+            television.increaseVolumTV();
+            display();
+        }
+        else {
+            alert("Ti Vi da tat roi");
+        }
+    }
+    function dowVolum() {
+        if(television.onoff) {
+            television.reduceVolumTV();
+            display();
+        }
+        else {
+            alert("Ti Vi da tat roi");
+        }
+    }
+    function OnOff() {
+        television.onoff = !television.onoff;
+        display();
+    }
+</script>
+</body>
+</html>
