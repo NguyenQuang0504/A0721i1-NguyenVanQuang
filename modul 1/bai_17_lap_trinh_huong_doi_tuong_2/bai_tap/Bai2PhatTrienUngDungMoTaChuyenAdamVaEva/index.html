@@ -80,10 +80,14 @@
                 alert("Qua tao da bi an het roi ");
             }
         }
+        changeWeight(){
+            this.weight = this.weight + 1;
+        }
         eatApple(apple){
             if(apple.isEmpty()){
                 alert(this.getName() +" da can 1 mieng");
                 apple.decresae();
+                this.changeWeight();
             }
             else{
                 alert("Qua tao da bi an het roi ");
@@ -107,13 +111,19 @@
     function adamEatApple() {
         adam.eatApple(apple);
         display();
+        displayHuman();
     }
     function evaEatApple() {
         eva.eatApple(apple);
         display();
+        displayHuman();
     }
     function display(){
         document.getElementById("wieghtApple").innerHTML = "Khoi luong cua qua tao la: " +apple.getWieght();
+    }
+    function displayHuman() {
+        document.getElementById("adam").innerHTML = "Ten: " +adam.getName() +"<br> Can nang: " +adam.getWeight();
+        document.getElementById("eva").innerHTML = "Ten: " +eva.getName() +"<br> Can nang: " +eva.getWeight();
     }
     function adamVoice(){
         adam.sayVoic("Yeu Eva");

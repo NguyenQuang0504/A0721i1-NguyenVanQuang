@@ -24,8 +24,10 @@
             return this.energy;
         }
     //    Phuong thuc giam gia tri cua pin
-        decreaseEnergy() {
-            this.energy = this.energy-1;
+        decreaseEnergy(lamp) {
+            if(battery.getEnergy()>0&&lamp.status) {
+                this.energy = this.energy - 1;
+            }
         }
     }
     //Khai bao class lamps voi thuoc tinh status va thuoc tinh battery la mot doi tuong cua class Battery
@@ -52,6 +54,7 @@
             this.status = !this.status;
         }
     }
+    //Khai bao cac doi tuong
     let battery = new Battery();
     battery.setEnergy(100);
     let lamp = new Lamps(true);
@@ -61,14 +64,8 @@
         checklight();
     }
     function batteryChange() {
-
-        if(battery.getEnergy()>0&&lamp.status) {
-            battery.decreaseEnergy();
+            battery.decreaseEnergy(lamp);
             document.getElementById("info").innerHTML = "Luong pin con lai la " +battery.getEnergy() +"%";
-        }
-        else {
-            document.getElementById("info").innerHTML = "Luong pin con lai la " +battery.getEnergy() +"%";
-        }
     }
     function checklight() {
         if(lamp.status&&battery.getEnergy()>0){

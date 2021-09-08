@@ -22,10 +22,10 @@
             return channel;
         }
         increaseVolum(Tv){
-            Tv= Tv + 1;
+            return Tv + 1;
         }
         reduceVolum(Tv){
-            Tv= Tv-1;
+            return Tv-1;
         }
     }
     class Television{
@@ -39,52 +39,48 @@
             return !this.onoff
         }
         changeChannelTV(){
-            this.channel = this.remote.changeChannel();
+            if(this.onoff) {
+                this.channel = this.remote.changeChannel();
+            }
+            else {
+                alert("Ti vi da tat");
+            }
         }
         increaseVolumTV(){
-           this.volum = this.remote.increaseVolum(this.volum);
+            if(this.onoff) {
+                this.volum = this.remote.increaseVolum(this.volum);
+            }
+            else {
+                alert("Ti vi da tat roi");
+            }
         }
         reduceVolumTV(){
-            this.volum = this.remote.reduceVolum(this.volum);
+            if(this.onoff) {
+                this.volum = this.remote.reduceVolum(this.volum);
+            }
+            else {
+                alert("Ti vi da tat roi");
+            }
         }
     }
+    // Khai bao cac doi tuong
     let remote = new Remote(1);
     let television = new Television(2,30,true,remote);
     function display() {
-        if(television.onoff){
             document.getElementById("info_television").innerHTML = "Ti vi dang bat: " +television.onoff +"<br> Ti vi dang bat kenh: " +television.channel +"<br> Am luong cua ti vi la: " +television.volum;
-        }
-        else{
-            document.getElementById("info_television").innerText = "Ti Vi da tat";
-        }
     }
     display();
     function changeChannel1() {
-        if(television.onoff){
             television.changeChannelTV();
             display();
-        }
-        else {
-            alert("Ti Vi da tat roi");
-        }
     }
     function upVolum() {
-        if(television.onoff) {
             television.increaseVolumTV();
             display();
-        }
-        else {
-            alert("Ti Vi da tat roi");
-        }
     }
     function dowVolum() {
-        if(television.onoff) {
             television.reduceVolumTV();
             display();
-        }
-        else {
-            alert("Ti Vi da tat roi");
-        }
     }
     function OnOff() {
         television.onoff = !television.onoff;

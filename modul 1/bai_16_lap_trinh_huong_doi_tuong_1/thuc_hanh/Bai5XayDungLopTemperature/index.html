@@ -9,15 +9,23 @@
     class Temperature {
         constructor(C) {
             this.C = C;
-            this.CtoF = function () {
-                return (C*1.8)+32;
-            }
-            this.CtoKevin = function () {
-                return (C+273);
-            }
         }
+            getDoC(){
+            do{
+                this.C = parseInt(prompt("Ban hay nhap do C"));
+            }
+            while (this.C< -273)
+                return this.C;
+            }
+            CtoF() {
+                return (this.C*1.8)+32;
+            }
+            CtoKevin() {
+                return (this.C+273);
+            }
     };
-    let temperature = new Temperature(25);
+    let temperature = new Temperature();
+    temperature.getDoC();
     let doF = temperature.CtoF();
     let doKevin = temperature.CtoKevin();
     alert("Do F " + doF);
