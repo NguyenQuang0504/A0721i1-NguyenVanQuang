@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<h1>Kiem tra nguyen am va phu am</h1>
+<script>
+    let keyword = prompt("Ban hay nhap ky tu muon kiem tra");
+    keyword = keyword.toLowerCase();
+    function isLetter(c) {
+        return c.toLowerCase() != c.toUpperCase();
+    }
+    if(keyword == "o"||keyword =="u" ||keyword == "i" ||keyword=="a"||keyword == "e"){
+        alert("Ky tu ban nhap la nguyen am");
+    }
+    else if(!isLetter(keyword)||keyword.toString().length!=1){
+        alert("Ban nhap khong phai la ky tu chu");
+    }
+    else {
+        alert("Ban vua nhap phu am");
+    }
+</script>
+</body>
+</html>

@@ -76,13 +76,13 @@
             }
         }
         eatRat(Rat){
-            if(Rat.die){
-                alert("Chuot da chet roi!. Khong an dau");
-            }
-            else {
+            if(!Rat.die && this.speed >= Rat.speed){
                 alert("Con chuot nay ngon qua!! Qua da <3");
                 this.changeWeight(Rat);
                 Rat.die = true;
+            }
+            else {
+                alert("Chuot da chet roi hoac con meo da that bai!");
             }
         }
     }

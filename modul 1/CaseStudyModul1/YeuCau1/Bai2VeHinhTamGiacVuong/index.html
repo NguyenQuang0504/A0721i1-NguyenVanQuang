@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<h1>Ve hinh tam giac vuong rong</h1>
+<script>
+    let text = " ";
+    for(let i=1;i<=5;i++){
+        if(i==1){
+            text = text +"*" +"<br>";
+        }
+        else if(i==5){
+            for(let j=1;j<=5;j++){
+                text = text +"*";
+            }
+        }
+        else {
+            text = text +"*";
+            for(let j=2;j<=4;j++){
+                if(i==j){
+                    text = text +"*";
+                }
+                else{
+                    text = text +"&nbsp;&nbsp";
+                }
+            }
+            text = text +"<br>";
+        }
+    }
+    document.writeln(text);
+</script>
+</body>
+</html>

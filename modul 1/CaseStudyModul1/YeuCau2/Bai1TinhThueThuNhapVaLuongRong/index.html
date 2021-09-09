@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<h1>Tinh thue va luong rong</h1>
+<script>
+    let salary = parseInt(prompt("Ban hay nhap tien luong hang thang"));
+    if(salary >=15000000){
+        salary =salary - salary*(20/100);
+    }
+    else if(salary>=7000000){
+        salary = salary - salary*(10/100);
+    }
+    else {
+        salary =salary - salary*(5/100);
+    }
+    alert("So tien ban nhan duoc sau thue la: " +salary);
+</script>
+</body>
+</html>

@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<h1>Ve hinh tam giac can rong</h1>
+<script>
+    let N = 15;
+    let text = " ";
+    for(let i=0;i<=N/2;i++) {
+        if (i == 7) {
+            text = text +"&nbsp;&nbsp";
+            for (let j=0; j<N; j++) {
+                text = text +"*";
+            }
+        } else {
+            for (let j=0;j<N;j++) {
+                let a = Math.ceil(N/2);
+                if (j == (a + i) || j == (a - i)) {
+                    text = text + "*";
+                } else {
+                    text = text + "&nbsp;&nbsp;"
+                }
+            }
+            text = text + "<br>";
+        }
+    }
+    document.writeln(text);
+</script>
+</body>
+</html>

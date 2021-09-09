@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<h1> Ve hinh chu nhat dai 5 cao 4</h1>
+<script>
+    let text = " ";
+    for(let i = 0; i<4;i++){
+            if(i==0||i==3){
+                for(let j = 0; j<5;j++){
+               text = text +  "*" ;
+            }
+                text = text + "<br>";
+             }
+            else{
+                for(let j=0 ; j<5 ; j++){
+                    if(j==0||j==4){
+                        text = text +"*";
+                    }
+                    else{
+                        text = text + "&nbsp;&nbsp";
+                    }
+                }
+                text = text +"<br>";
+            }
+    }
+    document.writeln(text);
+</script>
+</body>
+</html>
