@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<p id="result"></p>
+<script>
+    let text_output = "";
+    let textA="";
+    let textB="";
+    let m = 0;
+    let n = 0;
+    let arrayA = [];
+    let arrayB = [];
+    let arrayC = [];
+    let length1 = parseInt(prompt("ban hay nhap do dai cua mang A"));
+    let length2 = parseInt(prompt("Ban hay nhap do dai cua mang B"));
+    for(let i=0;i<length1;i++){
+        arrayA[i] = parseInt(prompt("ban hay nhap phan tu thu " +i +" cua mang A"));
+        textA = textA +arrayA[i] +"&nbsp;";
+    }
+    for(let i=0;i<length2;i++){
+        arrayB[i] = parseInt(prompt("ban hay nhap phan tu thu " +i +" cua mang B"));
+        textB = textB +arrayB[i] +"&nbsp;";
+    }
+    for(let i = 0;i<length2;i++){
+        for(let j=0;j<length1;j++){
+            if(arrayB[i] == arrayA[j]){
+                m = 1;
+                break;
+            }
+            m=0;
+        }
+        if(m==0){
+            arrayC[n]=arrayB[i];
+            n=n+1;
+        }
+    }
+    arrayC = arrayC.sort();
+   for(let i=0;i<arrayC.length;i++){
+       text_output = text_output +arrayC[i] +"&nbsp;";
+   }
+    document.getElementById("result").innerHTML = "Mang A " +textA +" <br> Mang B " +textB +"<br>Phan tu co trong B khong co trong A " +text_output;
+ </script>
+</body>
+</html>

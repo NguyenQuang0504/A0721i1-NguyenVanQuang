@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    text = " ";
+    text_output = " ";
+    let array_input =  {};
+    let array_output = {};
+    let N = parseInt(prompt("Ban hay nhap so phan tu cua mang "));
+    for(let i=0;i<N;i++){
+        array_input[i] = parseInt(prompt("Ban hay nhap phan tu thu "+i +" cua mang"));
+        text = text + array_input[i] + "&nbsp;";
+    }
+    for(let i = 0;i<N;i++){
+        array_output[i] =0;
+        for(let j=0;j<=i;j++){
+            array_output[i] = array_input[j] + array_output[i];
+        }
+        text_output = text_output + array_output[i] +"&nbsp;";
+    }
+    document.writeln(text +"<br>" +text_output);
+</script>
+</body>
+</html>

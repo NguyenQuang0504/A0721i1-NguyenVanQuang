@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        button{
+            border: 1px solid white;
+            background-color: orange;
+            color: black;
+            text-align: center;
+            width: auto;
+            height: 30px;
+        }
+        input{
+            border: 1px solid #afafaf;
+            width: 200px;
+            height: 25px;
+        }
+    </style>
+</head>
+<body>
+<h1>Oder do uong</h1>
+<h2>Menu:</h2>
+<ol>
+    <li>Cafe</li>
+    <li>Cam Vắt</li>
+    <li>Nước Ép Cà Rốt</li>
+    <li>Nước Ép Cà Chua</li>
+    <li>Nước Lọc</li>
+    <li>Nước Dừa</li>
+    <li>Thoát Oder</li>
+</ol>
+<input type="text" id="oder" placeholder="Nhap id nuoc uong" value="">
+<button type="button" onclick="oder()">Oder</button>
+<button type="button" onclick="display()" >Cập nhật giỏ hàng</button>
+<br>
+<br>
+<button type="button" onclick="deleteOder()">Huy Oder</button>
+<p id="display">Gio hang cua ban:</p>
+<script>
+    let number;
+    let index=0;
+    let array_menu = ["Cafe","Cam Vắt","Nước Ép Cà Rốt"," Nước Ép Cà Chua"," Nước Lọc","Nước Dừa"];
+    let array_id = ["1","2","3","4","5","6"];
+    let price = [15000,10000,10000,10000,5000,17000];
+    function oder() {
+        let id = document.getElementById("oder").value;
+        for(let i = 0;i<array_id.length;i++){
+            if(array_id[i]===id){
+                number = parseInt(prompt("Don gia cua" +array_menu[i] +" la:" +price[i] +" Ban hay nhap so luong:"));
+                index = i;
+                break;
+            }
+        }
+    }
+    function display() {
+        let priceMonney = number*price[index];
+        document.getElementById("display").innerHTML = "Gio hang cua ban: " +number +" " + array_menu[index] + "   " +priceMonney +"VND";
+        document.getElementById("oder").value = "";
+    }
+    function deleteOder() {
+        if(confirm("Ban chac chan muon huy Oder?")){
+            alert("Ban da huy Oder");
+            document.getElementById("display").innerHTML = "Gio hang cua ban:";
+        }
+    }
+</script>
+</body>
+</html>

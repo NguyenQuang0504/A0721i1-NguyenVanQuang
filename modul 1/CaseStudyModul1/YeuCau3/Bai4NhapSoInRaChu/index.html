@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    let text = "";
+    let number = ["1","2","3","4","5","6","7","8","9","0"];
+    let char = ["mot","hai","ba","bon","nam","sau","bay","tam","chin","khong"];
+    let array_input = [] ;
+    let array_output = [] ;
+    let input = prompt("Ban hay nhap so muon hien thi");
+    array_input = input;
+    for(let i =0;i<array_input.length;i++){
+        for(let j = 0;j<number.length;j++){
+            if(array_input[i]==number[j]){
+                array_output.push(char[j]);
+                break;
+            }
+        }
+    }
+    for(let i=0;i<array_output.length;i++){
+        text = text +array_output[i] +"&nbsp;";
+    }
+    document.writeln("ban vua nhap: " +input +"<br> Chuyen sang chu la:" +text);
+</script>
+</body>
+</html>

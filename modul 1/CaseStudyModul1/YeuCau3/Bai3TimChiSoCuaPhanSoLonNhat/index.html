@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    let index = 0;
+    let numerator = [1,2,4,5,4,2,1];
+    let denominator = [2,3,7,5,3,1,5];
+    let max = numerator[0]/denominator[0];
+    for(let i =0 ;i<numerator.length;i++){
+        let faction = numerator[i]/denominator[i];
+        if(faction>=max){
+            max = faction;
+            index = i;
+        }
+    }
+    alert("Chi so cua phan so lon nhat la: " +index +" Phan so lon nhat la: " +max);
+</script>
+</body>
+</html>
