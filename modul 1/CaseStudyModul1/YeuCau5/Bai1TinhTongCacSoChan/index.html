@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<h1>
+    Tinh tong cac so chan cua ma tran
+</h1>
+<p id="result"></p>
+<script>
+    let sum = 0;
+    let text = "<br>";
+    let m = parseInt(prompt("Ban hay nhap m"));
+    let n = parseInt(prompt("Ban hay nhap n"));
+    let array = [];
+    for(let i=0;i<m;i++){
+        for(let j=0;j<n;j++){
+            array[i] = [];
+            array[i][j]=parseInt(prompt("Ban hay nhap phan tu array[" +i +"][" +j +"]" ));
+            text = text +array[i][j] +"&nbsp;&nbsp;";
+            if(array[i][j]%2==0){
+                sum = sum + array[i][j];
+            }
+        }
+        text = text +"<br>"
+    }
+    document.getElementById("result").innerHTML = "Mang array: " +text +"<br><br> Tong cac phan tu chan cua mang: " +sum;
+</script>
+</body>
+</html>

@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<h1>Liet ke so nguyen to trong mang 2 chieu</h1>
+<script>
+    let count=0;
+    let text1 = "";
+    let text = "<br>";
+    let array = [];
+    let m = parseInt(prompt("Ban hay nhap m"));
+    let n = parseInt(prompt("Ban hay nhap n"));
+    for(let i=0;i<m;i++){
+        array[i] = [];
+        for(let j=0;j<n;j++){
+            array[i][j] = parseInt(prompt("Ban hay nhap array[" +i +"][" +j +"]"));
+            text = text +array[i][j] +"&nbsp;&nbsp";
+            if(check(array[i][j])){
+                count = count +1;
+                text1=text1 + array[i][j] +"&nbsp;"
+            }
+        }
+        text = text +"<br>";
+    }
+    //Ham check la so nguyen to
+    function check(number) {
+        if(number==1||number==2){
+            return true;
+        }
+        else{
+            for(let i=2;i<=Math.sqrt(number);i++){
+                if(number%i==0){
+                    return false;
+                }
+            }
+            return true;
+        }
+    }
+    //Hien thi
+    document.writeln("Mang array: " +text +"<br> So nguyen to trong mang: " +count +"<br> Cac so: " +text1);
+</script>
+</body>
+</html>

@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<h1>Tim so ky tu giong nhau giua hai chuoi</h1>
+<p id="display"></p>
+<p id="result"></p>
+<script>
+    let text = "";
+    let string_result = [];
+    let string1 =prompt("Ban hay nhap chuoi 1");
+    let string2 = prompt("Ban hay nhap chuoi 2");
+    string1 = string1.split("");
+    string2 = string2.split("");
+    let string_output1 = string1;
+    let string_output2 = string2;
+    for(let i=0;i<string1.length;i++){
+        for(let j=i+1;j<string1.length;j++){
+            if(string1[i] ==string1[j]){
+                string_output1.splice(j,1);
+            }
+        }
+    }
+    for(let i=0;i<string2.length;i++){
+        for(let j=i+1;j<string2.length;j++){
+            if(string2[i] ==string2[j]){
+                string_output2.splice(j,1);
+            }
+        }
+    }
+    for(let i=0;i<string_output1.length;i++){
+        for(let j=0;j<string_output2.length;j++){
+            if(string_output1[i] == string_output2[j]){
+                string_result.push(string_output1[i]);
+            }
+        }
+    }
+    for(let i=0;i<string_result.length;i++){
+        text = text + string_result[i] +"&nbsp;"
+    }
+    document.getElementById("display").innerHTML = "Chuoi1: " +string1.toString() +"<br> Chuoi2: " +string2.toString();
+    document.getElementById("result").innerHTML = "So ky tu giong nhau cua 2 mang la: " +string_result.length +"<br> Cac ky tu: " +text;
+</script>
+</body>
+</html>
