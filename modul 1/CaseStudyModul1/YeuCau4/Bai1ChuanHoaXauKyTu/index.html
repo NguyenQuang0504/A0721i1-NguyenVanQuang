@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    let text = " ";
+    let string_output = [];
+    let string_input = prompt("Ban hay nhap chuoi can chuan hoa");
+    function standardized(string) {
+        for (let i=0;i<string.length;i++) {
+            if (i == 0) {
+                string_output[i] = string[i].toUpperCase();
+            } else {
+                if (string[i] == " ") {
+                    string_output[i] = "&nbsp;"
+                    string_output[i + 1] = string[i + 1].toUpperCase();
+                    i = i + 1;
+                } else {
+                    string_output[i] = string[i].toLowerCase();
+                }
+            }
+        }
+    }
+    standardized(string_input);
+    for(let i = 0;i<string_output.length;i++){
+        text = text +string_output[i];
+    }
+    document.writeln(text);
+</script>
+</body>
+</html>
