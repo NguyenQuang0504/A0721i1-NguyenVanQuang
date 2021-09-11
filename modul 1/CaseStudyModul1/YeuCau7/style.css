@@ -1,0 +1,89 @@
+html{
+    font-family: Arial;
+}
+#header{
+    background-color: #999292;
+    width: 100%;
+    height: 110px;
+    top: 0;
+    position: relative;
+}
+.text_header{
+    padding-top: 15px;
+    font-size: 20px;
+    text-align: center;
+}
+.header_ingredient i{
+    padding-left: 5px;
+    padding-right: 5px;
+    font-size: 20px;
+    font-weight: 600;
+}
+.header_ingredient{
+    position: relative;
+    padding-left: 15px;
+    padding-right: 15px;
+    width: 100%;
+}
+.header_ingredient #input_link {
+    width: 70%;
+    height: 27px;
+    border: 1px solid black;
+}
+.header_ingredient #search{
+    width: 120px;
+    height: 27px;
+    border: 1px solid black;
+
+}
+.header_ingredient .ti-search{
+    padding-left: 20px;
+}
+.header_ingredient .ti-home{
+    padding-right: 20px;
+}
+#header_chirld{
+    position: relative;
+    height: 50px;
+}
+#header_chirld #content {
+    text-align: center;
+    line-height: 50px;
+    font-size: 20px;
+    font-weight: 600;
+}
+#header_chirld .ti-google{
+    font-size: 40px;
+    display: block;
+    position: absolute;
+    padding-left: 30px;
+}
+#body .table{
+    margin-top: -10px;
+    border-right: 1px solid black;
+    padding-left: 30px;
+}
+#body .table td {
+    width: 150px;
+    padding-top: 45px;
+    font-weight: 500;
+    font-size: 20px;
+    text-decoration-line: underline;
+    position: relative;
+}
+#body .table tr {
+    padding-top: 20px;
+}
+#body .ti-angle-down {
+    padding: 10px;
+}
+#body .table .ti-angle-down:hover{
+    background-color: black;
+    color: white;
+}
+#footer{
+    width: 100%;
+    height: 50px;
+    background-color: #999292;
+}
+
