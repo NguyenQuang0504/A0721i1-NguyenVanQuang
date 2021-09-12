@@ -11,28 +11,25 @@
         constructor(width, length) {
             this.width = width;
             this.length = length;
-            this.getChuVi = function () {
-                return 2*width*length;
+        }
+            getChuVi() {
+                return 2*this.width*this.length;
             }
-            this.getDienTich = function () {
-                return width*length;
+            getDienTich() {
+                return this.width*this.length;
             }
+        getRectangule() {
+            let x = Math.floor(Math.random()*1000);
+            let y = Math.floor(Math.random()*1000);
+            let ctx = document.getElementById("rectangule1").getContext("2d");
+            ctx.fillStyle = "#FF0000";
+            ctx.fillRect(x, y, this.width, this.length);
         }
     }
     let rectangule = new Rectangule(100, 200);
-    function result() {
-        let x = Math.floor(Math.random()*1000);
-        let y = Math.floor(Math.random()*1000);
-        let ctx = document.getElementById("rectangule1").getContext("2d");
-        ctx.fillStyle = "#FF0000";
-        ctx.fillRect(x, y, rectangule.width, rectangule.length);
-    }
     alert("Dien tich hinh cn la " +rectangule.getDienTich());
     alert("Chu vi hinh cn la " +rectangule.getChuVi());
-    result();
-    rectangule.width = Math.floor(Math.random()*1000);
-    rectangule.length = Math.floor(Math.random()*1000);
-    result();
+    rectangule.getRectangule();
 </script>
 </body>
 </html>
