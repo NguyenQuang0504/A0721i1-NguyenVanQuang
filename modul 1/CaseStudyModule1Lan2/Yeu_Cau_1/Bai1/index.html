@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<h1>Ve Hinh Chu Nhat Rong m, n</h1>
+<p id="result"></p>
+<script>
+    let display = "";
+    let m = parseInt(prompt("Ban hay nhap m"));
+    let n = parseInt(prompt("Ban hay nhap n"));
+    for(let i=1 ; i<=m ;i++){
+        for(let j = 1;j<=n;j++){
+            if(i==1||i==m){
+                display = display +"*";
+            }
+            else{
+                if(j==1||j==n){
+                    display = display +"*";
+                }
+                else{
+                    display = display + "&nbsp;&nbsp;"
+                }
+            }
+        }
+        display = display +"<br>"
+    }
+    document.write(display);
+</script>
+</body>
+</html>

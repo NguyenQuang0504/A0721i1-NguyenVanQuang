@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<h1>Ve Tam Giac Can Dac Chieu Cao H</h1>
+<script>
+    let display = "";
+    let h = parseInt(prompt("ban hay nhap chieu cao cua tam giac can dac la:"));
+    for(let i=1;i<=h ; i++){
+        for(let k = h-i;k>=1;k--){
+            display = display + "&nbsp;&nbsp"
+        }
+        for(j=1;j<=2*i-1;j++){
+            display = display +"*";
+        }
+        display = display +"<br>";
+    }
+    document.write(display);
+</script>
+</body>
+</html>

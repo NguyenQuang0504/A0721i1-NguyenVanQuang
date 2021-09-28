@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<center>
+<h1>Chuong trinh quan ly sach</h1>
+    <p id="display1"></p>
+    <button type="button" onclick="addBook()">Them sach da co</button>
+    <button type="button" onclick="addNewBook()">Them sach moi</button>
+    <button type="button" onclick="rentBook()">Muon sach</button>
+    <button type="button" onclick="displayBook()">Hien thi sach nhieu nhat</button>
+</center>
+<script>
+    class book{
+        constructor(idBook,nameBook,year,quantity,status) {
+            this.idBook = idBook;
+            this.nameBook = nameBook;
+            this.year = year;
+            this.quantity = quantity;
+            this.status = status;
+        }
+        getId(){
+            return this.idBook;
+        }
+        getName(){
+            return this.nameBook;
+        }
+        getYear(){
+            return this.year;
+        }
+        getQuantity(){
+            return this.quantity;
+        }
+        getStatus(){
+            return this.status;
+        }
+        setId(id){
+          this.idBook = id;
+        }
+        setName(name){
+            this.nameBook = name;
+        }
+        setYear(year){
+            let array = year.split('');
+            if(array.length>4){
+                alert("Sai nam roi");
+                return false;
+            }
+            else {
+                this.year = year;
+                return true;
+            }
+        }
+        setQuantity(quantity) {
+            this.quantity = quantity;
+        }
+        setStatus(){
+            if(this.getQuantity()>0){
+                this.status = "true";
+            }
+            else {
+                this.status = "false";
+            }
+        }
+    }
+    let book1 = new book(12345,"Sach 1",2011,5,true);
+    let book2 = new book(12315,"Sach 2",2021,5,true);
+    let arrayBook = [book1,book2];
+    function display(){
+        let text = "<table style='border: 1px solid black' border='1px solid'> "
+            +"<tr>"+
+            "<th> Ma So sach </th>"+
+            "<th>Ten sach</th>" +
+            " <th>Nam xuat ban</th>"+
+            " <th>So quyen</th>"+
+            "<th>Tinh trang</th>"+
+            "</tr>";
+        for (let i = 0; i < arrayBook.length; i++) {
+            text = text + "<tr>" +
+                "<td>" + arrayBook[i].getId() + "</td>" +
+                "<td>" + arrayBook[i].getName() + "</td>" +
+                " <td>" + arrayBook[i].getYear() + "</td>" +
+                " <td>" + arrayBook[i].getQuantity() + "</td>" +
+                " <td>" + arrayBook[i].getStatus() + "</td>" +
+            "</tr>";
+        }
+        text = text +"</table>";
+        document.getElementById("display1").innerHTML = text;
+    }
+    display();
+    function addBook() {
+        let id = parseInt(prompt("Ban hay nhap Id sach da co muon them vao"));
+        for(let i=0;i<arrayBook.length;i++){
+            if(arrayBook[i].getId() == id){
+                let quality = parseInt(prompt("Ban hay nhap so sach muon them"));
+                arrayBook[i].setQuantity(quality+arrayBook[i].getQuantity());
+                arrayBook[i].setStatus();
+            }
+        }
+        display();
+    }
+    function addNewBook() {
+        let bookNew = new book();
+        let array;
+        let year;
+        do {
+            let id = prompt("ban hay nhap id sach muon them vao");
+            array = id.split('');
+        }
+        while (array.length != 5||array[0]>5)
+        let id = array.join('');
+        bookNew.setId(id);
+        let name = prompt("Ban hay nhap ten cua sach muon them vao");
+        bookNew.setName(name);
+        do {
+            year = prompt("Ban hay nhap nam xuat ban");
+        }
+        while (!bookNew.setYear(year))
+        let quatity = parseInt(prompt("Ban hay nhap so luong sach"));
+        bookNew.setQuantity(quatity);
+        bookNew.setStatus();
+        arrayBook.push(bookNew);
+        display();
+    }
+    function rentBook() {
+        let id = parseInt(prompt("Ban hay nhap Id sach da co muon muon vao"));
+        for(let i=0;i<arrayBook.length;i++){
+            if(arrayBook[i].getId() == id) {
+                let quality = parseInt(prompt("Ban hay nhap so sach muon muon"));
+                if (quality > arrayBook[i].getQuantity()) {
+                    alert("So sach muon qua lon");
+                } else {
+                    arrayBook[i].setQuantity(arrayBook[i].getQuantity()-quality);
+                    arrayBook[i].setStatus();
+                    alert("Ban da muon " +quality +" cuon sach");
+                }
+            }
+        }
+        display();
+    }
+    function displayBook() {
+        let max = 0;
+        for(let i = 0;i<arrayBook.length;i++){
+            if(arrayBook[i].getQuantity()>max){
+                max = arrayBook[i].getQuantity();
+            }
+        }
+        alert("So sach nhieu nhat la " +max);
+    }
+</script>
+</body>
+</html>

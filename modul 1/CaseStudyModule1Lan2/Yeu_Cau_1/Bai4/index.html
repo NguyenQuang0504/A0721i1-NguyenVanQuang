@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<h1>Ve Tam Giac Can Rong Co Chieu Cao La H</h1>
+<script>
+    let display = "";
+    let h = parseInt(prompt("Ban hay nhap chieu cao h cua hinh tam giac can rong"));
+    for(let i = 1;i<=h;i++){
+        for(let k = h-i;k>=1;k--){
+            display = display +"&nbsp;&nbsp;"
+        }
+        for(let j = 1;j<=2*i-1;j++){
+            if(i==h){
+                display = display +"*";
+            }
+            else {
+                if (j == 1 || j == 2*i - 1) {
+                    display = display + "*";
+                } else {
+                    display = display + "&nbsp;&nbsp;"
+                }
+            }
+        }
+        display = display+"<br>";
+    }
+    document.write(display);
+</script>
+</body>
+</html>

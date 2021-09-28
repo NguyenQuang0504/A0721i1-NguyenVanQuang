@@ -1,0 +1,38 @@
+<!--Câu 1: Nhập từ bàn phím mảng số nguyên gồm n phần tử (n<=50), Hiển thị ra màn hình trung bình cộng các số lẻ ở vị trí chẵn.-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<h1>Tinh trung binh cong cac phan tu le o vi tri chan</h1>
+<p id="display"></p>
+<script>
+    let sum = 0;
+    let count = 0;
+    let result = 0;
+    let display_array = "";
+    let number;
+    let array_input = [];
+    do{
+        number = parseInt(prompt("Ban hay nhap so phan tu cua mang be hon 50"));
+    }
+    while(number>50);
+    for(let i = 0;i<number;i++){
+        array_input[i] = parseInt(prompt("Ban hay nhap phan tu thu [" +i +"] cua mang" ));
+        display_array = display_array + array_input[i] +"&nbsp;";
+    }
+    for(let i=0;i<number;i++){
+        if(i%2==0){
+            if(array_input[i]%2!=0){
+                sum = sum + array_input[i];
+                count = count+1;
+            }
+        }
+    }
+    result = sum/count;
+    document.getElementById("display").innerHTML = "Mang la:" +display_array +"<br> Trung binh:" +result;
+</script>
+</body>
+</html>
